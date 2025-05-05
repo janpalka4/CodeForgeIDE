@@ -1,0 +1,30 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:semi="https://irihi.tech/semi"
+			 xmlns:system="clr-namespace:System;assembly=mscorlib"
+             x:Class="CodeForgeIDE.App"
+             RequestedThemeVariant="Default">
+             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+
+	<Application.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.ThemeDictionaries>
+				<ResourceDictionary x:Key='Light'>
+					<system:String x:Key="IconCss">path { fill: #000000; } .black { fill: #000000; }</system:String>
+				</ResourceDictionary>
+				<ResourceDictionary x:Key='Dark'>
+					<system:String x:Key="IconCss">path { fill: #FFFFFF; } .black { fill: #FFFFFF; }</system:String>
+				</ResourceDictionary>
+			</ResourceDictionary.ThemeDictionaries>
+		</ResourceDictionary>
+	</Application.Resources>
+	
+    <Application.Styles>
+		<semi:SemiTheme Locale="en-US" />
+		<semi:AvaloniaEditSemiTheme />
+
+		<Style Selector="Svg">
+			<Setter Property="Css" Value="{DynamicResource IconCss}" />
+		</Style>
+    </Application.Styles>
+</Application>

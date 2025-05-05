@@ -1,0 +1,65 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Assets\Fonts\fa-solid-900.ttf" />
+    <None Remove="Assets\Icons\arrow-bottom-left-2-fill.svg" />
+    <None Remove="Assets\Icons\arrow-eject-20-filled.svg" />
+    <None Remove="Assets\Icons\chrome-close.svg" />
+    <None Remove="Assets\Icons\cog.svg" />
+    <None Remove="Assets\Icons\file-code.svg" />
+    <None Remove="Assets\Icons\file-folder.svg" />
+    <None Remove="Assets\Icons\folder-open-24-filled.svg" />
+    <None Remove="Assets\Icons\menu-right.svg" />
+    <None Remove="Assets\Icons\open-in-new-tab.svg" />
+    <None Remove="Assets\Icons\open.svg" />
+    <None Remove="Assets\Icons\tab-desktop-multiple-sparkle-16-filled.svg" />
+    <None Remove="Assets\Icons\x.svg" />
+    <None Remove="Assets\Splash.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AvaloniaResource Include="Assets\Fonts\fa-solid-900.ttf" />
+    <AvaloniaResource Include="Assets\Icons\arrow-bottom-left-2-fill.svg" />
+    <AvaloniaResource Include="Assets\Icons\arrow-eject-20-filled.svg" />
+    <AvaloniaResource Include="Assets\Icons\chrome-close.svg" />
+    <AvaloniaResource Include="Assets\Icons\cog.svg" />
+    <AvaloniaResource Include="Assets\Icons\file-code.svg" />
+    <AvaloniaResource Include="Assets\Icons\file-folder.svg" />
+    <AvaloniaResource Include="Assets\Icons\folder-open-24-filled.svg" />
+    <AvaloniaResource Include="Assets\Icons\menu-right.svg" />
+    <AvaloniaResource Include="Assets\Icons\open-in-new-tab.svg" />
+    <AvaloniaResource Include="Assets\Icons\open.svg" />
+    <AvaloniaResource Include="Assets\Icons\tab-desktop-multiple-sparkle-16-filled.svg" />
+    <AvaloniaResource Include="Assets\Icons\x.svg" />
+    <AvaloniaResource Include="Assets\Splash.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.2.1" />
+    <PackageReference Include="Avalonia.Desktop" Version="11.2.1" />
+    <PackageReference Include="Avalonia.Svg.Skia" Version="11.2.0" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.1" />
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.2.1" />
+    <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+    <PackageReference Include="Avalonia.Diagnostics" Version="11.2.1">
+      <IncludeAssets Condition="'$(Configuration)' != 'Debug'">None</IncludeAssets>
+      <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Semi.Avalonia" Version="11.2.1.7" />
+    <PackageReference Include="Semi.Avalonia.AvaloniaEdit" Version="11.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CodeForgeIDE.Core\CodeForgeIDE.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Model\" />
+  </ItemGroup>
+</Project>

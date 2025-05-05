@@ -1,0 +1,20 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:local="clr-namespace:CodeForgeIDE.Controls.ProjectExplorer"
+			 xmlns:core="clr-namespace:CodeForgeIDE.Core.Controls;assembly=CodeForgeIDE.Core"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="CodeForgeIDE.Controls.ProjectExplorer.ProjectExplorerItem"
+			 x:DataType="local:ProjectExplorerItem">
+
+	<StackPanel Orientation="Vertical">
+		<StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+			<core:GuiIcon IconPath="{Binding IconPath}" Width="16" Height="16"/>
+			<TextBlock Text="{Binding ItemName}" Margin="8 0"/>
+		</StackPanel>
+		<StackPanel Orientation="Vertical" Margin="32 0 0 0">
+			<TextBlock Text="Lol"/>
+		</StackPanel>
+	</StackPanel>
+</UserControl>

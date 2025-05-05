@@ -1,0 +1,25 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="770" d:DesignHeight="513"
+        x:Class="CodeForgeIDE.MainWindow"
+        Title="CodeForgeIDE"
+		ExtendClientAreaToDecorationsHint="True"
+		ExtendClientAreaChromeHints="NoChrome"
+		ExtendClientAreaTitleBarHeightHint="-1"
+		SizeToContent="WidthAndHeight"
+		CanResize="False"
+		WindowStartupLocation="CenterScreen">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="100"/>
+			<RowDefinition/>
+			<RowDefinition Height="28"/>
+		</Grid.RowDefinitions>
+		
+		<Image Source="Assets/Splash.jpg" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="770" Height="513" Grid.RowSpan="3"/>
+		<Label Content="Code Forge" Margin="12" FontSize="46" Foreground="Black"/>
+		<Label Content="Loading..." x:Name="statusLabel" Margin="4" FontSize="12" Foreground="DarkGray" Grid.Row="2"/>
+	</Grid>
+</Window>
