@@ -7,25 +7,32 @@ namespace CodeForgeIDE.Core.Controls;
 
 public partial class GuiIcon : UserControl
 {
-    public static readonly DirectProperty<GuiIcon, string> IconPathProperty =
-        AvaloniaProperty.RegisterDirect<GuiIcon, string>(
-            nameof(IconPath),
-            o => o.IconPath,
-            (o, v) => o.IconPath = v);
+    public static readonly StyledProperty<string> IconPathProperty =
+       AvaloniaProperty.Register<GuiIcon, string>(
+           name: nameof(IconPath),
+           defaultValue: Icons.Folder,
+           inherits: false);
+    //public static readonly DirectProperty<GuiIcon, string> IconPathProperty =
+    //    AvaloniaProperty.RegisterDirect<GuiIcon, string>(
+    //        nameof(IconPath),
+    //        o => o.IconPath,
+    //        (o, v) => o.IconPath = v);
 
 
-    public string IconPath { get { return _iconPath; } set { SetAndRaise(IconPathProperty, ref _iconPath, value); ValidateCss(); } }
+    public string IconPath { get { return GetValue(IconPathProperty); } set { SetValue(IconPathProperty,value); ValidateCss();  } }
     public bool DisableCss { get; set; }
     public bool EnableCss { get => !DisableCss; }
 
 
-    private string _iconPath = Icons.Folder;
+    //private string _iconPath = Icons.Folder;
 
     public GuiIcon()
     {
         InitializeComponent();
-        this.DataContext = this;
+
         ValidateCss();
+
+        this.DataContext = this;
     }
 
     private void ValidateCss()

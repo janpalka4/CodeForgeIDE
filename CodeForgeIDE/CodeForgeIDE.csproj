@@ -11,6 +11,8 @@
     <None Remove="Assets\Fonts\fa-solid-900.ttf" />
     <None Remove="Assets\Icons\arrow-bottom-left-2-fill.svg" />
     <None Remove="Assets\Icons\arrow-eject-20-filled.svg" />
+    <None Remove="Assets\Icons\caret-bottom-right-solid-8.svg" />
+    <None Remove="Assets\Icons\caret-right-8.svg" />
     <None Remove="Assets\Icons\chrome-close.svg" />
     <None Remove="Assets\Icons\cog.svg" />
     <None Remove="Assets\Icons\file-code.svg" />
@@ -27,6 +29,8 @@
     <AvaloniaResource Include="Assets\Fonts\fa-solid-900.ttf" />
     <AvaloniaResource Include="Assets\Icons\arrow-bottom-left-2-fill.svg" />
     <AvaloniaResource Include="Assets\Icons\arrow-eject-20-filled.svg" />
+    <AvaloniaResource Include="Assets\Icons\caret-bottom-right-solid-8.svg" />
+    <AvaloniaResource Include="Assets\Icons\caret-right-8.svg" />
     <AvaloniaResource Include="Assets\Icons\chrome-close.svg" />
     <AvaloniaResource Include="Assets\Icons\cog.svg" />
     <AvaloniaResource Include="Assets\Icons\file-code.svg" />
@@ -56,10 +60,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Avalonia.UpDock\Avalonia.UpDock\Avalonia.UpDock.csproj" />
     <ProjectReference Include="..\CodeForgeIDE.Core\CodeForgeIDE.Core.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Model\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Controls\SolutionExplorerItem.axaml.cs">
+      <DependentUpon>SolutionExplorerItem.axaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>

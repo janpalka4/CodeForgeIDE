@@ -35,7 +35,7 @@ public partial class GatewayWindow : Window
         var files = await topLevel.StorageProvider.OpenFilePickerAsync(new Avalonia.Platform.Storage.FilePickerOpenOptions() 
         { 
             AllowMultiple = false, 
-            Title = "Open existiong project", 
+            Title = "Open existing project", 
             FileTypeFilter = new List<FilePickerFileType>() 
                 {
                     new FilePickerFileType("C# project or solution file")
@@ -63,9 +63,31 @@ public partial class GatewayWindow : Window
 
     }
 
-    private void Button_Click_OpenFolder(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+    private async void Button_Click_OpenFolder(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
-        
+        TopLevel? topLevel = GetTopLevel(this);
+
+        if (topLevel is null)
+            return;
+
+        //Pick file
+        var folders = await topLevel.StorageProvider.OpenFolderPickerAsync(new Avalonia.Platform.Storage.FolderPickerOpenOptions()
+        {
+            AllowMultiple = false,
+            Title = "Open folder"
+        });
+
+        if (folders is null || folders.Count == 0)
+            return;
+
+        //Load project or solution
+        IDE.Editor.OpenProjectOrSolution(folders[0].Path.AbsolutePath);
+
+        //Open editor
+        EditorWindow window = new EditorWindow();
+        window.Show();
+
+        Close();
     }
 
 }

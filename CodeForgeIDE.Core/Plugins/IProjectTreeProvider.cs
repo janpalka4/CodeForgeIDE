@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CodeForgeIDE.Core.Solution;
 
 namespace CodeForgeIDE.Core.Plugins
 {
-    internal class IProjectTreeProvider
+    public interface IProjectTreeProvider
     {
+        public Task<ProjectTreeNode> GetProjectTree(string projectPath);
+        public Task<ProjectTreeNode> GetProjectNode(string path, bool shallow = false);
     }
 }

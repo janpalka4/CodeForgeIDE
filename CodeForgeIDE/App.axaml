@@ -22,7 +22,6 @@
     <Application.Styles>
 		<semi:SemiTheme Locale="en-US" />
 		<semi:AvaloniaEditSemiTheme />
-
 		<Style Selector="Svg">
 			<Setter Property="Css" Value="{DynamicResource IconCss}" />
 		</Style>

@@ -1,13 +1,58 @@
 <Window xmlns="https://github.com/avaloniaui"
-       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-       xmlns:projectEx="clr-namespace:CodeForgeIDE.Controls.ProjectExplorer;assembly=CodeForgeIDE"
-       mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-       x:Class="CodeForgeIDE.EditorWindow"
-       Title="EditorWindow">
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:controls="clr-namespace:CodeForgeIDE.Controls;assembly=CodeForgeIDE"
+      xmlns:up="clr-namespace:Avalonia.UpDock.Controls;assembly=Avalonia.UpDock"
+      mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+      x:Class="CodeForgeIDE.EditorWindow"
+      Title="EditorWindow">
 
-	<Grid>
-		<projectEx:ProjectExplorerItem/>
-    </Grid>
+	<Window.Resources>
+		<DataTemplate DataType="x:String" x:Key="TabTemplate">
+			<StackPanel Orientation="Horizontal">
+				<Ellipse Width="10" Height="10" Fill="Green"/>
+				<TextBlock Text="{Binding}" />
+			</StackPanel>
+		</DataTemplate>
+	</Window.Resources>
+
+	<DockPanel>
+		<Menu DockPanel.Dock="Top">
+			<MenuItem Header="File">
+
+			</MenuItem>
+			<MenuItem Header="Edit">
+
+			</MenuItem>
+			<MenuItem Header="View">
+
+			</MenuItem>
+		</Menu>
+		<up:DockSpacePanel Name="dockSpacePanel">
+			<up:RearrangeTabControl DockPanel.Dock="Left">
+				<up:ClosableTabItem Header="Solution explorer">
+					<controls:SolutionExplorer/>
+				</up:ClosableTabItem>
+			</up:RearrangeTabControl>
+			
+			<up:SplitPanel Fractions="3 1" DockPanel.Dock="Right" Orientation="Vertical">
+				
+				<up:RearrangeTabControl DockPanel.Dock="Top">
+					<up:ClosableTabItem Header="Program.cs">
+
+					</up:ClosableTabItem>
+					<up:ClosableTabItem Header="Class.cs">
+
+					</up:ClosableTabItem>
+				</up:RearrangeTabControl>
+
+				<up:RearrangeTabControl DockPanel.Dock="Bottom">
+					<up:ClosableTabItem Header="Terminal">
+
+					</up:ClosableTabItem>
+				</up:RearrangeTabControl>
+			</up:SplitPanel>
+		</up:DockSpacePanel>
+	</DockPanel>
 </Window>

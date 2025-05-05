@@ -7,7 +7,7 @@
              x:Class="CodeForgeIDE.Core.Controls.GuiIcon"
 			 x:DataType="local:GuiIcon">
 	<Grid>
-		<Svg Name="svgImage" Path="{Binding IconPath}" Css="" IsVisible="{Binding DisableCss}" Width="{Binding Width}" Height="{Binding Height}"/>
-		<Svg Name="svgImage2" Path="{Binding IconPath}" IsVisible="{Binding EnableCss}" Width="{Binding Width}" Height="{Binding Height}"/>
+		<Svg Name="svgImage" Path="{Binding IconPath, Mode=TwoWay}" Css="" IsVisible="{Binding DisableCss}" Width="{Binding Width}" Height="{Binding Height}"/>
+		<Svg Name="svgImage2" Path="{Binding IconPath, Mode=TwoWay}" IsVisible="{Binding EnableCss}" Width="{Binding Width}" Height="{Binding Height}"/>
 	</Grid>
 </UserControl>

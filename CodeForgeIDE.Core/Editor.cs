@@ -1,5 +1,6 @@
 ﻿using CodeForgeIDE.Core.Plugins;
 using CodeForgeIDE.Core.Services;
+using CodeForgeIDE.Core.Solution;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace CodeForgeIDE.Core
@@ -7,6 +8,9 @@ namespace CodeForgeIDE.Core
     public class Editor
     {
         public IServiceProvider ServiceProvider { get; private set; }
+        public IProjectTreeProvider ProjectTreeProvider { get; private set; }
+        public string ProjectRootPath { get; private set; } = string.Empty;
+
         public List<IIDEPlugin> Plugins { get; private set; } = new List<IIDEPlugin>();
 
         public Editor()
@@ -19,6 +23,8 @@ namespace CodeForgeIDE.Core
 
             services.AddSingleton<ILoggerService, LoggerService>();
             services.AddSingleton<IFileService, FileService>();
+
+            services.AddSingleton<IProjectTreeProvider, DefaultProjectTreeProvider>();
 
             return services;
         }
@@ -42,7 +48,12 @@ namespace CodeForgeIDE.Core
 
         public void OpenProjectOrSolution(string path)
         {
-            
+            // Replace encoded characters in the path  
+            path = Uri.UnescapeDataString(path);
+
+            // Select correct provider  
+            ProjectTreeProvider = ServiceProvider.GetRequiredService<IProjectTreeProvider>();
+            ProjectRootPath = path;
         }
     }
 }
