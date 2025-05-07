@@ -1,4 +1,5 @@
 ﻿using CodeForgeIDE.Core.Plugins;
+using CodeForgeIDE.Core.Solution.Model;
 
 namespace CodeForgeIDE.Core.Solution
 {
@@ -24,12 +25,12 @@ namespace CodeForgeIDE.Core.Solution
             {
                 FullPath = path,
                 Name = Path.GetFileName(path),
-                IconPath = Icons.FileCode
+                Icon = Icons.FileCode
             };
 
             if (Directory.Exists(path) && !shallow)
             {
-                projectNode.IconPath = Icons.Folder;
+                projectNode.Icon = Icons.Folder;
 
                 foreach (string _path in Directory.GetDirectories(path))
                 {
@@ -44,6 +45,11 @@ namespace CodeForgeIDE.Core.Solution
             }
 
             return projectNode;
+        }
+
+        public bool ShouldBeUsed(string path)
+        {
+            return true;
         }
     }
 }

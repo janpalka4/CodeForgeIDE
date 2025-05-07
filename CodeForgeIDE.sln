@@ -9,6 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeForgeIDE.Core", "CodeFo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Avalonia.UpDock", "Avalonia.UpDock\Avalonia.UpDock\Avalonia.UpDock.csproj", "{20391BF8-A10B-402E-B527-939C67DAB048}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{4503B924-3393-4DDC-88AD-3C5B5964075A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeForgeIDE.CSharp", "CodeForgeIDE.CSharp\CodeForgeIDE.CSharp.csproj", "{46E1D66C-577F-4BFD-9334-4F2765674948}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External", "External", "{D40FF0CC-5503-48D8-A3BF-4F3BE5A3CF24}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,8 +33,16 @@ Global
 		{20391BF8-A10B-402E-B527-939C67DAB048}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20391BF8-A10B-402E-B527-939C67DAB048}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20391BF8-A10B-402E-B527-939C67DAB048}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46E1D66C-577F-4BFD-9334-4F2765674948}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46E1D66C-577F-4BFD-9334-4F2765674948}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46E1D66C-577F-4BFD-9334-4F2765674948}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46E1D66C-577F-4BFD-9334-4F2765674948}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{20391BF8-A10B-402E-B527-939C67DAB048} = {D40FF0CC-5503-48D8-A3BF-4F3BE5A3CF24}
+		{46E1D66C-577F-4BFD-9334-4F2765674948} = {4503B924-3393-4DDC-88AD-3C5B5964075A}
 	EndGlobalSection
 EndGlobal

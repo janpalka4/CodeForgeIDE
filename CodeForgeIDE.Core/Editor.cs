@@ -2,11 +2,16 @@
 using CodeForgeIDE.Core.Services;
 using CodeForgeIDE.Core.Solution;
 using Microsoft.Extensions.DependencyInjection;
+using System.Runtime.CompilerServices;
 
 namespace CodeForgeIDE.Core
 {
     public class Editor
     {
+        public event Action<string> OnOpenProjectOrSolution;
+        public event Action<string> OnOpenDocument;
+        public event Action<string> OnSelectDocument;
+
         public IServiceProvider ServiceProvider { get; private set; }
         public IProjectTreeProvider ProjectTreeProvider { get; private set; }
         public string ProjectRootPath { get; private set; } = string.Empty;
@@ -52,8 +57,31 @@ namespace CodeForgeIDE.Core
             path = Uri.UnescapeDataString(path);
 
             // Select correct provider  
-            ProjectTreeProvider = ServiceProvider.GetRequiredService<IProjectTreeProvider>();
+            var providers = ServiceProvider.GetServices<IProjectTreeProvider>();
+            foreach (var provider in providers)
+            {
+                if (provider.ShouldBeUsed(path) && provider is not DefaultProjectTreeProvider)
+                {
+                    ProjectTreeProvider = provider;
+                    break;
+                }
+            }
+
+            ProjectTreeProvider = ProjectTreeProvider ?? providers.Single(x => x is DefaultProjectTreeProvider);
             ProjectRootPath = path;
+
+            // Notify that the project or solution is opened
+            OnOpenProjectOrSolution?.Invoke(path);
+        }
+
+        public void OpenDocument(string path)
+        {
+            OnOpenDocument?.Invoke(path);
+        }
+
+        public void SelectDocument(string path)
+        {
+            OnSelectDocument?.Invoke(path);
         }
     }
 }

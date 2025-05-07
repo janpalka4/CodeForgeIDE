@@ -46,6 +46,7 @@
 
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="11.2.1" />
+    <PackageReference Include="Avalonia.AvaloniaEdit" Version="11.3.0" />
     <PackageReference Include="Avalonia.Desktop" Version="11.2.1" />
     <PackageReference Include="Avalonia.Svg.Skia" Version="11.2.0" />
     <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.1" />
@@ -55,6 +56,7 @@
       <IncludeAssets Condition="'$(Configuration)' != 'Debug'">None</IncludeAssets>
       <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="AvaloniaEdit.TextMate" Version="11.3.0" />
     <PackageReference Include="Semi.Avalonia" Version="11.2.1.7" />
     <PackageReference Include="Semi.Avalonia.AvaloniaEdit" Version="11.2.0" />
   </ItemGroup>
@@ -62,6 +64,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Avalonia.UpDock\Avalonia.UpDock\Avalonia.UpDock.csproj" />
     <ProjectReference Include="..\CodeForgeIDE.Core\CodeForgeIDE.Core.csproj" />
+    <ProjectReference Include="..\CodeForgeIDE.CSharp\CodeForgeIDE.CSharp.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -69,6 +72,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Controls\DocumentEditor.axaml.cs">
+      <DependentUpon>DocumentEditor.axaml</DependentUpon>
+    </Compile>
     <Compile Update="Controls\SolutionExplorerItem.axaml.cs">
       <DependentUpon>SolutionExplorerItem.axaml</DependentUpon>
     </Compile>

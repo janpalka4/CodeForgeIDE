@@ -6,7 +6,8 @@
       xmlns:up="clr-namespace:Avalonia.UpDock.Controls;assembly=Avalonia.UpDock"
       mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
       x:Class="CodeForgeIDE.EditorWindow"
-      Title="EditorWindow">
+      Title="EditorWindow"
+	Background="{DynamicResource SemiGrey0}">
 
 	<Window.Resources>
 		<DataTemplate DataType="x:String" x:Key="TabTemplate">
@@ -37,15 +38,8 @@
 			</up:RearrangeTabControl>
 			
 			<up:SplitPanel Fractions="3 1" DockPanel.Dock="Right" Orientation="Vertical">
-				
-				<up:RearrangeTabControl DockPanel.Dock="Top">
-					<up:ClosableTabItem Header="Program.cs">
 
-					</up:ClosableTabItem>
-					<up:ClosableTabItem Header="Class.cs">
-
-					</up:ClosableTabItem>
-				</up:RearrangeTabControl>
+				<controls:Editor />
 
 				<up:RearrangeTabControl DockPanel.Dock="Bottom">
 					<up:ClosableTabItem Header="Terminal">

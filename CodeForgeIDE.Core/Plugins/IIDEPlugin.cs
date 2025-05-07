@@ -1,11 +1,13 @@
-﻿namespace CodeForgeIDE.Core.Plugins
+﻿using Microsoft.Extensions.DependencyInjection;
+
+namespace CodeForgeIDE.Core.Plugins
 {
     public interface IIDEPlugin
     {
         /// <summary>
         /// Loads the plugin 
         /// </summary>
-        public Task LoadAsync(IServiceProvider serviceProvider);
+        public Task LoadAsync(IServiceCollection services);
 
         /// <summary>
         /// Enables the plugin.

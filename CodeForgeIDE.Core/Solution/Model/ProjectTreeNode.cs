@@ -1,23 +1,25 @@
-﻿namespace CodeForgeIDE.Core.Solution
+﻿namespace CodeForgeIDE.Core.Solution.Model
 {
     public class ProjectTreeNode
     {
-        public string IconPath { get; set; } = Icons.FileCode;
+        public IconData Icon { get; set; } = Icons.FileCode;
         public string Name { get; set; } = "Untitled";
         public string FullPath { get; set; } = "";
+        public bool IsFile { get => !string.IsNullOrEmpty(FullPath) && File.Exists(FullPath); }
+        public bool IsDirectory { get => !string.IsNullOrEmpty(FullPath) && Directory.Exists(FullPath); }
         public ProjectTreeNode? Parent { get; private set; } = null;
         public IReadOnlyList<ProjectTreeNode> Children { get => _children.AsReadOnly(); }
 
         private List<ProjectTreeNode> _children { get; set; } = new List<ProjectTreeNode>();
 
-        public ProjectTreeNode() 
-        { 
-        
+        public ProjectTreeNode()
+        {
+
         }
 
-        public ProjectTreeNode(string iconPath, string name, string fullPath)
+        public ProjectTreeNode(IconData icon, string name, string fullPath)
         {
-            IconPath = iconPath;
+            Icon = icon;
             Name = name;
             FullPath = fullPath;
         }

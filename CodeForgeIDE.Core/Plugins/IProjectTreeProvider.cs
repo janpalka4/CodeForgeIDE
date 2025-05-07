@@ -1,4 +1,4 @@
-﻿using CodeForgeIDE.Core.Solution;
+﻿using CodeForgeIDE.Core.Solution.Model;
 
 namespace CodeForgeIDE.Core.Plugins
 {
@@ -6,5 +6,6 @@ namespace CodeForgeIDE.Core.Plugins
     {
         public Task<ProjectTreeNode> GetProjectTree(string projectPath);
         public Task<ProjectTreeNode> GetProjectNode(string path, bool shallow = false);
+        public bool ShouldBeUsed(string path);
     }
 }
