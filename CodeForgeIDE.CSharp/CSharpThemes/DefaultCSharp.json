@@ -1,0 +1,1700 @@
+﻿{
+  "None": {
+    "Color": "#FFFFFF"
+  },
+  "List": {
+    "Color": "#FFFFFF"
+  },
+  "TildeToken": {
+    "Color": "#c9c9c9"
+  },
+  "ExclamationToken": {
+    "Color": "#c9c9c9"
+  },
+  "DollarToken": {
+    "Color": "#c9c9c9"
+  },
+  "PercentToken": {
+    "Color": "#c9c9c9"
+  },
+  "CaretToken": {
+    "Color": "#c9c9c9"
+  },
+  "AmpersandToken": {
+    "Color": "#c9c9c9"
+  },
+  "AsteriskToken": {
+    "Color": "#c9c9c9"
+  },
+  "OpenParenToken": {
+    "Color": "#c9c9c9"
+  },
+  "CloseParenToken": {
+    "Color": "#c9c9c9"
+  },
+  "MinusToken": {
+    "Color": "#c9c9c9"
+  },
+  "PlusToken": {
+    "Color": "#c9c9c9"
+  },
+  "EqualsToken": {
+    "Color": "#c9c9c9"
+  },
+  "OpenBraceToken": {
+    "Color": "#c9c9c9"
+  },
+  "CloseBraceToken": {
+    "Color": "#c9c9c9"
+  },
+  "OpenBracketToken": {
+    "Color": "#c9c9c9"
+  },
+  "CloseBracketToken": {
+    "Color": "#c9c9c9"
+  },
+  "BarToken": {
+    "Color": "#c9c9c9"
+  },
+  "BackslashToken": {
+    "Color": "#c9c9c9"
+  },
+  "ColonToken": {
+    "Color": "#c9c9c9"
+  },
+  "SemicolonToken": {
+    "Color": "#c9c9c9"
+  },
+  "DoubleQuoteToken": {
+    "Color": "#c9c9c9"
+  },
+  "SingleQuoteToken": {
+    "Color": "#c9c9c9"
+  },
+  "LessThanToken": {
+    "Color": "#c9c9c9"
+  },
+  "CommaToken": {
+    "Color": "#c9c9c9"
+  },
+  "GreaterThanToken": {
+    "Color": "#c9c9c9"
+  },
+  "DotToken": {
+    "Color": "#c9c9c9"
+  },
+  "QuestionToken": {
+    "Color": "#c9c9c9"
+  },
+  "HashToken": {
+    "Color": "#c9c9c9"
+  },
+  "SlashToken": {
+    "Color": "#c9c9c9"
+  },
+  "DotDotToken": {
+    "Color": "#c9c9c9"
+  },
+  "SlashGreaterThanToken": {
+    "Color": "#c9c9c9"
+  },
+  "LessThanSlashToken": {
+    "Color": "#c9c9c9"
+  },
+  "XmlCommentStartToken": {
+    "Color": "#009933"
+  },
+  "XmlCommentEndToken": {
+    "Color": "#009933"
+  },
+  "XmlCDataStartToken": {
+    "Color": "#c9c9c9"
+  },
+  "XmlCDataEndToken": {
+    "Color": "#c9c9c9"
+  },
+  "XmlProcessingInstructionStartToken": {
+    "Color": "#c9c9c9"
+  },
+  "XmlProcessingInstructionEndToken": {
+    "Color": "#c9c9c9"
+  },
+  "BarBarToken": {
+    "Color": "#c9c9c9"
+  },
+  "AmpersandAmpersandToken": {
+    "Color": "#c9c9c9"
+  },
+  "MinusMinusToken": {
+    "Color": "#c9c9c9"
+  },
+  "PlusPlusToken": {
+    "Color": "#c9c9c9"
+  },
+  "ColonColonToken": {
+    "Color": "#c9c9c9"
+  },
+  "QuestionQuestionToken": {
+    "Color": "#c9c9c9"
+  },
+  "MinusGreaterThanToken": {
+    "Color": "#c9c9c9"
+  },
+  "ExclamationEqualsToken": {
+    "Color": "#c9c9c9"
+  },
+  "EqualsEqualsToken": {
+    "Color": "#c9c9c9"
+  },
+  "EqualsGreaterThanToken": {
+    "Color": "#c9c9c9"
+  },
+  "LessThanEqualsToken": {
+    "Color": "#c9c9c9"
+  },
+  "LessThanLessThanToken": {
+    "Color": "#c9c9c9"
+  },
+  "LessThanLessThanEqualsToken": {
+    "Color": "#c9c9c9"
+  },
+  "GreaterThanEqualsToken": {
+    "Color": "#c9c9c9"
+  },
+  "GreaterThanGreaterThanToken": {
+    "Color": "#c9c9c9"
+  },
+  "GreaterThanGreaterThanEqualsToken": {
+    "Color": "#c9c9c9"
+  },
+  "SlashEqualsToken": {
+    "Color": "#c9c9c9"
+  },
+  "AsteriskEqualsToken": {
+    "Color": "#c9c9c9"
+  },
+  "BarEqualsToken": {
+    "Color": "#c9c9c9"
+  },
+  "AmpersandEqualsToken": {
+    "Color": "#c9c9c9"
+  },
+  "PlusEqualsToken": {
+    "Color": "#c9c9c9"
+  },
+  "MinusEqualsToken": {
+    "Color": "#c9c9c9"
+  },
+  "CaretEqualsToken": {
+    "Color": "#c9c9c9"
+  },
+  "PercentEqualsToken": {
+    "Color": "#c9c9c9"
+  },
+  "QuestionQuestionEqualsToken": {
+    "Color": "#c9c9c9"
+  },
+  "GreaterThanGreaterThanGreaterThanToken": {
+    "Color": "#c9c9c9"
+  },
+  "GreaterThanGreaterThanGreaterThanEqualsToken": {
+    "Color": "#c9c9c9"
+  },
+  "BoolKeyword": {
+    "Color": "#0091ff"
+  },
+  "ByteKeyword": {
+    "Color": "#0091ff"
+  },
+  "SByteKeyword": {
+    "Color": "#0091ff"
+  },
+  "ShortKeyword": {
+    "Color": "#0091ff"
+  },
+  "UShortKeyword": {
+    "Color": "#0091ff"
+  },
+  "IntKeyword": {
+    "Color": "#0091ff"
+  },
+  "UIntKeyword": {
+    "Color": "#0091ff"
+  },
+  "LongKeyword": {
+    "Color": "#0091ff"
+  },
+  "ULongKeyword": {
+    "Color": "#0091ff"
+  },
+  "DoubleKeyword": {
+    "Color": "#0091ff"
+  },
+  "FloatKeyword": {
+    "Color": "#0091ff"
+  },
+  "DecimalKeyword": {
+    "Color": "#0091ff"
+  },
+  "StringKeyword": {
+    "Color": "#0091ff"
+  },
+  "CharKeyword": {
+    "Color": "#0091ff"
+  },
+  "VoidKeyword": {
+    "Color": "#0091ff"
+  },
+  "ObjectKeyword": {
+    "Color": "#0091ff"
+  },
+  "TypeOfKeyword": {
+    "Color": "#0091ff"
+  },
+  "SizeOfKeyword": {
+    "Color": "#0091ff"
+  },
+  "NullKeyword": {
+    "Color": "#0091ff"
+  },
+  "TrueKeyword": {
+    "Color": "#0091ff"
+  },
+  "FalseKeyword": {
+    "Color": "#0091ff"
+  },
+  "IfKeyword": {
+    "Color": "#0091ff"
+  },
+  "ElseKeyword": {
+    "Color": "#0091ff"
+  },
+  "WhileKeyword": {
+    "Color": "#0091ff"
+  },
+  "ForKeyword": {
+    "Color": "#0091ff"
+  },
+  "ForEachKeyword": {
+    "Color": "#0091ff"
+  },
+  "DoKeyword": {
+    "Color": "#0091ff"
+  },
+  "SwitchKeyword": {
+    "Color": "#0091ff"
+  },
+  "CaseKeyword": {
+    "Color": "#0091ff"
+  },
+  "DefaultKeyword": {
+    "Color": "#0091ff"
+  },
+  "TryKeyword": {
+    "Color": "#0091ff"
+  },
+  "CatchKeyword": {
+    "Color": "#0091ff"
+  },
+  "FinallyKeyword": {
+    "Color": "#0091ff"
+  },
+  "LockKeyword": {
+    "Color": "#0091ff"
+  },
+  "GotoKeyword": {
+    "Color": "#0091ff"
+  },
+  "BreakKeyword": {
+    "Color": "#0091ff"
+  },
+  "ContinueKeyword": {
+    "Color": "#0091ff"
+  },
+  "ReturnKeyword": {
+    "Color": "#0091ff"
+  },
+  "ThrowKeyword": {
+    "Color": "#0091ff"
+  },
+  "PublicKeyword": {
+    "Color": "#0091ff"
+  },
+  "PrivateKeyword": {
+    "Color": "#0091ff"
+  },
+  "InternalKeyword": {
+    "Color": "#0091ff"
+  },
+  "ProtectedKeyword": {
+    "Color": "#0091ff"
+  },
+  "StaticKeyword": {
+    "Color": "#0091ff"
+  },
+  "ReadOnlyKeyword": {
+    "Color": "#0091ff"
+  },
+  "SealedKeyword": {
+    "Color": "#0091ff"
+  },
+  "ConstKeyword": {
+    "Color": "#0091ff"
+  },
+  "FixedKeyword": {
+    "Color": "#0091ff"
+  },
+  "StackAllocKeyword": {
+    "Color": "#0091ff"
+  },
+  "VolatileKeyword": {
+    "Color": "#0091ff"
+  },
+  "NewKeyword": {
+    "Color": "#0091ff"
+  },
+  "OverrideKeyword": {
+    "Color": "#0091ff"
+  },
+  "AbstractKeyword": {
+    "Color": "#0091ff"
+  },
+  "VirtualKeyword": {
+    "Color": "#0091ff"
+  },
+  "EventKeyword": {
+    "Color": "#0091ff"
+  },
+  "ExternKeyword": {
+    "Color": "#0091ff"
+  },
+  "RefKeyword": {
+    "Color": "#0091ff"
+  },
+  "OutKeyword": {
+    "Color": "#0091ff"
+  },
+  "InKeyword": {
+    "Color": "#0091ff"
+  },
+  "IsKeyword": {
+    "Color": "#0091ff"
+  },
+  "AsKeyword": {
+    "Color": "#0091ff"
+  },
+  "ParamsKeyword": {
+    "Color": "#0091ff"
+  },
+  "ArgListKeyword": {
+    "Color": "#0091ff"
+  },
+  "MakeRefKeyword": {
+    "Color": "#0091ff"
+  },
+  "RefTypeKeyword": {
+    "Color": "#0091ff"
+  },
+  "RefValueKeyword": {
+    "Color": "#0091ff"
+  },
+  "ThisKeyword": {
+    "Color": "#0091ff"
+  },
+  "BaseKeyword": {
+    "Color": "#0091ff"
+  },
+  "NamespaceKeyword": {
+    "Color": "#0091ff"
+  },
+  "UsingKeyword": {
+    "Color": "#0091ff"
+  },
+  "ClassKeyword": {
+    "Color": "#0091ff"
+  },
+  "StructKeyword": {
+    "Color": "#0091ff"
+  },
+  "InterfaceKeyword": {
+    "Color": "#0091ff"
+  },
+  "EnumKeyword": {
+    "Color": "#0091ff"
+  },
+  "DelegateKeyword": {
+    "Color": "#0091ff"
+  },
+  "CheckedKeyword": {
+    "Color": "#0091ff"
+  },
+  "UncheckedKeyword": {
+    "Color": "#0091ff"
+  },
+  "UnsafeKeyword": {
+    "Color": "#0091ff"
+  },
+  "OperatorKeyword": {
+    "Color": "#0091ff"
+  },
+  "ExplicitKeyword": {
+    "Color": "#0091ff"
+  },
+  "ImplicitKeyword": {
+    "Color": "#0091ff"
+  },
+  "YieldKeyword": {
+    "Color": "#0091ff"
+  },
+  "PartialKeyword": {
+    "Color": "#0091ff"
+  },
+  "AliasKeyword": {
+    "Color": "#0091ff"
+  },
+  "GlobalKeyword": {
+    "Color": "#0091ff"
+  },
+  "AssemblyKeyword": {
+    "Color": "#0091ff"
+  },
+  "ModuleKeyword": {
+    "Color": "#0091ff"
+  },
+  "TypeKeyword": {
+    "Color": "#0091ff"
+  },
+  "FieldKeyword": {
+    "Color": "#0091ff"
+  },
+  "MethodKeyword": {
+    "Color": "#0091ff"
+  },
+  "ParamKeyword": {
+    "Color": "#0091ff"
+  },
+  "PropertyKeyword": {
+    "Color": "#0091ff"
+  },
+  "TypeVarKeyword": {
+    "Color": "#0091ff"
+  },
+  "GetKeyword": {
+    "Color": "#0091ff"
+  },
+  "SetKeyword": {
+    "Color": "#0091ff"
+  },
+  "AddKeyword": {
+    "Color": "#0091ff"
+  },
+  "RemoveKeyword": {
+    "Color": "#0091ff"
+  },
+  "WhereKeyword": {
+    "Color": "#0091ff"
+  },
+  "FromKeyword": {
+    "Color": "#0091ff"
+  },
+  "GroupKeyword": {
+    "Color": "#0091ff"
+  },
+  "JoinKeyword": {
+    "Color": "#0091ff"
+  },
+  "IntoKeyword": {
+    "Color": "#0091ff"
+  },
+  "LetKeyword": {
+    "Color": "#0091ff"
+  },
+  "ByKeyword": {
+    "Color": "#0091ff"
+  },
+  "SelectKeyword": {
+    "Color": "#0091ff"
+  },
+  "OrderByKeyword": {
+    "Color": "#0091ff"
+  },
+  "OnKeyword": {
+    "Color": "#0091ff"
+  },
+  "EqualsKeyword": {
+    "Color": "#0091ff"
+  },
+  "AscendingKeyword": {
+    "Color": "#0091ff"
+  },
+  "DescendingKeyword": {
+    "Color": "#0091ff"
+  },
+  "NameOfKeyword": {
+    "Color": "#0091ff"
+  },
+  "AsyncKeyword": {
+    "Color": "#0091ff"
+  },
+  "AwaitKeyword": {
+    "Color": "#0091ff"
+  },
+  "WhenKeyword": {
+    "Color": "#0091ff"
+  },
+  "OrKeyword": {
+    "Color": "#0091ff"
+  },
+  "AndKeyword": {
+    "Color": "#0091ff"
+  },
+  "NotKeyword": {
+    "Color": "#0091ff"
+  },
+  "WithKeyword": {
+    "Color": "#0091ff"
+  },
+  "InitKeyword": {
+    "Color": "#0091ff"
+  },
+  "RecordKeyword": {
+    "Color": "#0091ff"
+  },
+  "ManagedKeyword": {
+    "Color": "#0091ff"
+  },
+  "UnmanagedKeyword": {
+    "Color": "#0091ff"
+  },
+  "RequiredKeyword": {
+    "Color": "#0091ff"
+  },
+  "ScopedKeyword": {
+    "Color": "#0091ff"
+  },
+  "FileKeyword": {
+    "Color": "#0091ff"
+  },
+  "AllowsKeyword": {
+    "Color": "#0091ff"
+  },
+  "ElifKeyword": {
+    "Color": "#0091ff"
+  },
+  "EndIfKeyword": {
+    "Color": "#0091ff"
+  },
+  "RegionKeyword": {
+    "Color": "#0091ff"
+  },
+  "EndRegionKeyword": {
+    "Color": "#0091ff"
+  },
+  "DefineKeyword": {
+    "Color": "#0091ff"
+  },
+  "UndefKeyword": {
+    "Color": "#0091ff"
+  },
+  "WarningKeyword": {
+    "Color": "#0091ff"
+  },
+  "ErrorKeyword": {
+    "Color": "#0091ff"
+  },
+  "LineKeyword": {
+    "Color": "#0091ff"
+  },
+  "PragmaKeyword": {
+    "Color": "#0091ff"
+  },
+  "HiddenKeyword": {
+    "Color": "#0091ff"
+  },
+  "ChecksumKeyword": {
+    "Color": "#0091ff"
+  },
+  "DisableKeyword": {
+    "Color": "#0091ff"
+  },
+  "RestoreKeyword": {
+    "Color": "#0091ff"
+  },
+  "ReferenceKeyword": {
+    "Color": "#0091ff"
+  },
+  "InterpolatedStringStartToken": {
+    "Color": "#CE9178"
+  },
+  "InterpolatedStringEndToken": {
+    "Color": "#CE9178"
+  },
+  "InterpolatedVerbatimStringStartToken": {
+    "Color": "#CE9178"
+  },
+  "LoadKeyword": {
+    "Color": "#0091ff"
+  },
+  "NullableKeyword": {
+    "Color": "#0091ff"
+  },
+  "EnableKeyword": {
+    "Color": "#0091ff"
+  },
+  "WarningsKeyword": {
+    "Color": "#0091ff"
+  },
+  "AnnotationsKeyword": {
+    "Color": "#0091ff"
+  },
+  "VarKeyword": {
+    "Color": "#0091ff"
+  },
+  "UnderscoreToken": {
+    "Color": "#c9c9c9"
+  },
+  "OmittedTypeArgumentToken": {
+    "Color": "#c9c9c9"
+  },
+  "OmittedArraySizeExpressionToken": {
+    "Color": "#c9c9c9"
+  },
+  "EndOfDirectiveToken": {
+    "Color": "#c9c9c9"
+  },
+  "EndOfDocumentationCommentToken": {
+    "Color": "#009933"
+  },
+  "EndOfFileToken": {
+    "Color": "#c9c9c9"
+  },
+  "BadToken": {
+    "Color": "#c9c9c9"
+  },
+  "IdentifierToken": {
+    "Color": "#FFFFFF"
+  },
+  "NumericLiteralToken": {
+    "Color": "#B5CEA8"
+  },
+  "CharacterLiteralToken": {
+    "Color": "#c9c9c9"
+  },
+  "StringLiteralToken": {
+    "Color": "#CE9178"
+  },
+  "XmlEntityLiteralToken": {
+    "Color": "#c9c9c9"
+  },
+  "XmlTextLiteralToken": {
+    "Color": "#c9c9c9"
+  },
+  "XmlTextLiteralNewLineToken": {
+    "Color": "#c9c9c9"
+  },
+  "InterpolatedStringToken": {
+    "Color": "#CE9178"
+  },
+  "InterpolatedStringTextToken": {
+    "Color": "#CE9178"
+  },
+  "SingleLineRawStringLiteralToken": {
+    "Color": "#CE9178"
+  },
+  "MultiLineRawStringLiteralToken": {
+    "Color": "#CE9178"
+  },
+  "Utf8StringLiteralToken": {
+    "Color": "#CE9178"
+  },
+  "Utf8SingleLineRawStringLiteralToken": {
+    "Color": "#CE9178"
+  },
+  "Utf8MultiLineRawStringLiteralToken": {
+    "Color": "#CE9178"
+  },
+  "RazorContentToken": {
+    "Color": "#c9c9c9"
+  },
+  "EndOfLineTrivia": {
+    "Color": "#FFFFFF"
+  },
+  "WhitespaceTrivia": {
+    "Color": "#FFFFFF"
+  },
+  "SingleLineCommentTrivia": {
+    "Color": "#009933"
+  },
+  "MultiLineCommentTrivia": {
+    "Color": "#009933"
+  },
+  "DocumentationCommentExteriorTrivia": {
+    "Color": "#009933"
+  },
+  "SingleLineDocumentationCommentTrivia": {
+    "Color": "#009933"
+  },
+  "MultiLineDocumentationCommentTrivia": {
+    "Color": "#009933"
+  },
+  "DisabledTextTrivia": {
+    "Color": "#FFFFFF"
+  },
+  "PreprocessingMessageTrivia": {
+    "Color": "#FFFFFF"
+  },
+  "IfDirectiveTrivia": {
+    "Color": "#FFFFFF"
+  },
+  "ElifDirectiveTrivia": {
+    "Color": "#FFFFFF"
+  },
+  "ElseDirectiveTrivia": {
+    "Color": "#FFFFFF"
+  },
+  "EndIfDirectiveTrivia": {
+    "Color": "#FFFFFF"
+  },
+  "RegionDirectiveTrivia": {
+    "Color": "#FFFFFF"
+  },
+  "EndRegionDirectiveTrivia": {
+    "Color": "#FFFFFF"
+  },
+  "DefineDirectiveTrivia": {
+    "Color": "#FFFFFF"
+  },
+  "UndefDirectiveTrivia": {
+    "Color": "#FFFFFF"
+  },
+  "ErrorDirectiveTrivia": {
+    "Color": "#FFFFFF"
+  },
+  "WarningDirectiveTrivia": {
+    "Color": "#FFFFFF"
+  },
+  "LineDirectiveTrivia": {
+    "Color": "#FFFFFF"
+  },
+  "PragmaWarningDirectiveTrivia": {
+    "Color": "#FFFFFF"
+  },
+  "PragmaChecksumDirectiveTrivia": {
+    "Color": "#FFFFFF"
+  },
+  "ReferenceDirectiveTrivia": {
+    "Color": "#FFFFFF"
+  },
+  "BadDirectiveTrivia": {
+    "Color": "#FFFFFF"
+  },
+  "SkippedTokensTrivia": {
+    "Color": "#c9c9c9"
+  },
+  "ConflictMarkerTrivia": {
+    "Color": "#FFFFFF"
+  },
+  "XmlElement": {
+    "Color": "#FFFFFF"
+  },
+  "XmlElementStartTag": {
+    "Color": "#FFFFFF"
+  },
+  "XmlElementEndTag": {
+    "Color": "#FFFFFF"
+  },
+  "XmlEmptyElement": {
+    "Color": "#FFFFFF"
+  },
+  "XmlTextAttribute": {
+    "Color": "#FFFFFF"
+  },
+  "XmlCrefAttribute": {
+    "Color": "#FFFFFF"
+  },
+  "XmlNameAttribute": {
+    "Color": "#FFFFFF"
+  },
+  "XmlName": {
+    "Color": "#FFFFFF"
+  },
+  "XmlPrefix": {
+    "Color": "#FFFFFF"
+  },
+  "XmlText": {
+    "Color": "#FFFFFF"
+  },
+  "XmlCDataSection": {
+    "Color": "#FFFFFF"
+  },
+  "XmlComment": {
+    "Color": "#009933"
+  },
+  "XmlProcessingInstruction": {
+    "Color": "#FFFFFF"
+  },
+  "TypeCref": {
+    "Color": "#FFFFFF"
+  },
+  "QualifiedCref": {
+    "Color": "#FFFFFF"
+  },
+  "NameMemberCref": {
+    "Color": "#FFFFFF"
+  },
+  "IndexerMemberCref": {
+    "Color": "#FFFFFF"
+  },
+  "OperatorMemberCref": {
+    "Color": "#FFFFFF"
+  },
+  "ConversionOperatorMemberCref": {
+    "Color": "#FFFFFF"
+  },
+  "CrefParameterList": {
+    "Color": "#FFFFFF"
+  },
+  "CrefBracketedParameterList": {
+    "Color": "#FFFFFF"
+  },
+  "CrefParameter": {
+    "Color": "#FFFFFF"
+  },
+  "IdentifierName": {
+    "Color": "#FFFFFF"
+  },
+  "QualifiedName": {
+    "Color": "#FFFFFF"
+  },
+  "GenericName": {
+    "Color": "#FFFFFF"
+  },
+  "TypeArgumentList": {
+    "Color": "#FFFFFF"
+  },
+  "AliasQualifiedName": {
+    "Color": "#FFFFFF"
+  },
+  "PredefinedType": {
+    "Color": "#FFFFFF"
+  },
+  "ArrayType": {
+    "Color": "#FFFFFF"
+  },
+  "ArrayRankSpecifier": {
+    "Color": "#FFFFFF"
+  },
+  "PointerType": {
+    "Color": "#FFFFFF"
+  },
+  "NullableType": {
+    "Color": "#FFFFFF"
+  },
+  "OmittedTypeArgument": {
+    "Color": "#FFFFFF"
+  },
+  "ParenthesizedExpression": {
+    "Color": "#FFFFFF"
+  },
+  "ConditionalExpression": {
+    "Color": "#FFFFFF"
+  },
+  "InvocationExpression": {
+    "Color": "#FFFFFF"
+  },
+  "ElementAccessExpression": {
+    "Color": "#FFFFFF"
+  },
+  "ArgumentList": {
+    "Color": "#FFFFFF"
+  },
+  "BracketedArgumentList": {
+    "Color": "#FFFFFF"
+  },
+  "Argument": {
+    "Color": "#FFFFFF"
+  },
+  "NameColon": {
+    "Color": "#FFFFFF"
+  },
+  "CastExpression": {
+    "Color": "#FFFFFF"
+  },
+  "AnonymousMethodExpression": {
+    "Color": "#FFFFFF"
+  },
+  "SimpleLambdaExpression": {
+    "Color": "#FFFFFF"
+  },
+  "ParenthesizedLambdaExpression": {
+    "Color": "#FFFFFF"
+  },
+  "ObjectInitializerExpression": {
+    "Color": "#FFFFFF"
+  },
+  "CollectionInitializerExpression": {
+    "Color": "#FFFFFF"
+  },
+  "ArrayInitializerExpression": {
+    "Color": "#FFFFFF"
+  },
+  "AnonymousObjectMemberDeclarator": {
+    "Color": "#FFFFFF"
+  },
+  "ComplexElementInitializerExpression": {
+    "Color": "#FFFFFF"
+  },
+  "ObjectCreationExpression": {
+    "Color": "#FFFFFF"
+  },
+  "AnonymousObjectCreationExpression": {
+    "Color": "#FFFFFF"
+  },
+  "ArrayCreationExpression": {
+    "Color": "#FFFFFF"
+  },
+  "ImplicitArrayCreationExpression": {
+    "Color": "#FFFFFF"
+  },
+  "StackAllocArrayCreationExpression": {
+    "Color": "#FFFFFF"
+  },
+  "OmittedArraySizeExpression": {
+    "Color": "#FFFFFF"
+  },
+  "InterpolatedStringExpression": {
+    "Color": "#CE9178"
+  },
+  "ImplicitElementAccess": {
+    "Color": "#FFFFFF"
+  },
+  "IsPatternExpression": {
+    "Color": "#FFFFFF"
+  },
+  "RangeExpression": {
+    "Color": "#FFFFFF"
+  },
+  "ImplicitObjectCreationExpression": {
+    "Color": "#FFFFFF"
+  },
+  "AddExpression": {
+    "Color": "#FFFFFF"
+  },
+  "SubtractExpression": {
+    "Color": "#FFFFFF"
+  },
+  "MultiplyExpression": {
+    "Color": "#FFFFFF"
+  },
+  "DivideExpression": {
+    "Color": "#FFFFFF"
+  },
+  "ModuloExpression": {
+    "Color": "#FFFFFF"
+  },
+  "LeftShiftExpression": {
+    "Color": "#FFFFFF"
+  },
+  "RightShiftExpression": {
+    "Color": "#FFFFFF"
+  },
+  "LogicalOrExpression": {
+    "Color": "#FFFFFF"
+  },
+  "LogicalAndExpression": {
+    "Color": "#FFFFFF"
+  },
+  "BitwiseOrExpression": {
+    "Color": "#FFFFFF"
+  },
+  "BitwiseAndExpression": {
+    "Color": "#FFFFFF"
+  },
+  "ExclusiveOrExpression": {
+    "Color": "#FFFFFF"
+  },
+  "EqualsExpression": {
+    "Color": "#FFFFFF"
+  },
+  "NotEqualsExpression": {
+    "Color": "#FFFFFF"
+  },
+  "LessThanExpression": {
+    "Color": "#FFFFFF"
+  },
+  "LessThanOrEqualExpression": {
+    "Color": "#FFFFFF"
+  },
+  "GreaterThanExpression": {
+    "Color": "#FFFFFF"
+  },
+  "GreaterThanOrEqualExpression": {
+    "Color": "#FFFFFF"
+  },
+  "IsExpression": {
+    "Color": "#FFFFFF"
+  },
+  "AsExpression": {
+    "Color": "#FFFFFF"
+  },
+  "CoalesceExpression": {
+    "Color": "#FFFFFF"
+  },
+  "SimpleMemberAccessExpression": {
+    "Color": "#FFFFFF"
+  },
+  "PointerMemberAccessExpression": {
+    "Color": "#FFFFFF"
+  },
+  "ConditionalAccessExpression": {
+    "Color": "#FFFFFF"
+  },
+  "UnsignedRightShiftExpression": {
+    "Color": "#FFFFFF"
+  },
+  "MemberBindingExpression": {
+    "Color": "#FFFFFF"
+  },
+  "ElementBindingExpression": {
+    "Color": "#FFFFFF"
+  },
+  "SimpleAssignmentExpression": {
+    "Color": "#FFFFFF"
+  },
+  "AddAssignmentExpression": {
+    "Color": "#FFFFFF"
+  },
+  "SubtractAssignmentExpression": {
+    "Color": "#FFFFFF"
+  },
+  "MultiplyAssignmentExpression": {
+    "Color": "#FFFFFF"
+  },
+  "DivideAssignmentExpression": {
+    "Color": "#FFFFFF"
+  },
+  "ModuloAssignmentExpression": {
+    "Color": "#FFFFFF"
+  },
+  "AndAssignmentExpression": {
+    "Color": "#FFFFFF"
+  },
+  "ExclusiveOrAssignmentExpression": {
+    "Color": "#FFFFFF"
+  },
+  "OrAssignmentExpression": {
+    "Color": "#FFFFFF"
+  },
+  "LeftShiftAssignmentExpression": {
+    "Color": "#FFFFFF"
+  },
+  "RightShiftAssignmentExpression": {
+    "Color": "#FFFFFF"
+  },
+  "CoalesceAssignmentExpression": {
+    "Color": "#FFFFFF"
+  },
+  "UnsignedRightShiftAssignmentExpression": {
+    "Color": "#FFFFFF"
+  },
+  "UnaryPlusExpression": {
+    "Color": "#FFFFFF"
+  },
+  "UnaryMinusExpression": {
+    "Color": "#FFFFFF"
+  },
+  "BitwiseNotExpression": {
+    "Color": "#FFFFFF"
+  },
+  "LogicalNotExpression": {
+    "Color": "#FFFFFF"
+  },
+  "PreIncrementExpression": {
+    "Color": "#FFFFFF"
+  },
+  "PreDecrementExpression": {
+    "Color": "#FFFFFF"
+  },
+  "PointerIndirectionExpression": {
+    "Color": "#FFFFFF"
+  },
+  "AddressOfExpression": {
+    "Color": "#FFFFFF"
+  },
+  "PostIncrementExpression": {
+    "Color": "#FFFFFF"
+  },
+  "PostDecrementExpression": {
+    "Color": "#FFFFFF"
+  },
+  "AwaitExpression": {
+    "Color": "#FFFFFF"
+  },
+  "IndexExpression": {
+    "Color": "#FFFFFF"
+  },
+  "ThisExpression": {
+    "Color": "#FFFFFF"
+  },
+  "BaseExpression": {
+    "Color": "#FFFFFF"
+  },
+  "ArgListExpression": {
+    "Color": "#FFFFFF"
+  },
+  "NumericLiteralExpression": {
+    "Color": "#B5CEA8"
+  },
+  "StringLiteralExpression": {
+    "Color": "#CE9178"
+  },
+  "CharacterLiteralExpression": {
+    "Color": "#FFFFFF"
+  },
+  "TrueLiteralExpression": {
+    "Color": "#FFFFFF"
+  },
+  "FalseLiteralExpression": {
+    "Color": "#FFFFFF"
+  },
+  "NullLiteralExpression": {
+    "Color": "#FFFFFF"
+  },
+  "DefaultLiteralExpression": {
+    "Color": "#FFFFFF"
+  },
+  "Utf8StringLiteralExpression": {
+    "Color": "#CE9178"
+  },
+  "FieldExpression": {
+    "Color": "#FFFFFF"
+  },
+  "TypeOfExpression": {
+    "Color": "#FFFFFF"
+  },
+  "SizeOfExpression": {
+    "Color": "#FFFFFF"
+  },
+  "CheckedExpression": {
+    "Color": "#FFFFFF"
+  },
+  "UncheckedExpression": {
+    "Color": "#FFFFFF"
+  },
+  "DefaultExpression": {
+    "Color": "#FFFFFF"
+  },
+  "MakeRefExpression": {
+    "Color": "#FFFFFF"
+  },
+  "RefValueExpression": {
+    "Color": "#FFFFFF"
+  },
+  "RefTypeExpression": {
+    "Color": "#FFFFFF"
+  },
+  "QueryExpression": {
+    "Color": "#FFFFFF"
+  },
+  "QueryBody": {
+    "Color": "#FFFFFF"
+  },
+  "FromClause": {
+    "Color": "#FFFFFF"
+  },
+  "LetClause": {
+    "Color": "#FFFFFF"
+  },
+  "JoinClause": {
+    "Color": "#FFFFFF"
+  },
+  "JoinIntoClause": {
+    "Color": "#FFFFFF"
+  },
+  "WhereClause": {
+    "Color": "#FFFFFF"
+  },
+  "OrderByClause": {
+    "Color": "#FFFFFF"
+  },
+  "AscendingOrdering": {
+    "Color": "#FFFFFF"
+  },
+  "DescendingOrdering": {
+    "Color": "#FFFFFF"
+  },
+  "SelectClause": {
+    "Color": "#FFFFFF"
+  },
+  "GroupClause": {
+    "Color": "#FFFFFF"
+  },
+  "QueryContinuation": {
+    "Color": "#FFFFFF"
+  },
+  "Block": {
+    "Color": "#FFFFFF"
+  },
+  "LocalDeclarationStatement": {
+    "Color": "#FFFFFF"
+  },
+  "VariableDeclaration": {
+    "Color": "#FFFFFF"
+  },
+  "VariableDeclarator": {
+    "Color": "#FFFFFF"
+  },
+  "EqualsValueClause": {
+    "Color": "#FFFFFF"
+  },
+  "ExpressionStatement": {
+    "Color": "#FFFFFF"
+  },
+  "EmptyStatement": {
+    "Color": "#FFFFFF"
+  },
+  "LabeledStatement": {
+    "Color": "#FFFFFF"
+  },
+  "GotoStatement": {
+    "Color": "#FFFFFF"
+  },
+  "GotoCaseStatement": {
+    "Color": "#FFFFFF"
+  },
+  "GotoDefaultStatement": {
+    "Color": "#FFFFFF"
+  },
+  "BreakStatement": {
+    "Color": "#FFFFFF"
+  },
+  "ContinueStatement": {
+    "Color": "#FFFFFF"
+  },
+  "ReturnStatement": {
+    "Color": "#FFFFFF"
+  },
+  "YieldReturnStatement": {
+    "Color": "#FFFFFF"
+  },
+  "YieldBreakStatement": {
+    "Color": "#FFFFFF"
+  },
+  "ThrowStatement": {
+    "Color": "#FFFFFF"
+  },
+  "WhileStatement": {
+    "Color": "#FFFFFF"
+  },
+  "DoStatement": {
+    "Color": "#FFFFFF"
+  },
+  "ForStatement": {
+    "Color": "#FFFFFF"
+  },
+  "ForEachStatement": {
+    "Color": "#FFFFFF"
+  },
+  "UsingStatement": {
+    "Color": "#FFFFFF"
+  },
+  "FixedStatement": {
+    "Color": "#FFFFFF"
+  },
+  "CheckedStatement": {
+    "Color": "#FFFFFF"
+  },
+  "UncheckedStatement": {
+    "Color": "#FFFFFF"
+  },
+  "UnsafeStatement": {
+    "Color": "#FFFFFF"
+  },
+  "LockStatement": {
+    "Color": "#FFFFFF"
+  },
+  "IfStatement": {
+    "Color": "#FFFFFF"
+  },
+  "ElseClause": {
+    "Color": "#FFFFFF"
+  },
+  "SwitchStatement": {
+    "Color": "#FFFFFF"
+  },
+  "SwitchSection": {
+    "Color": "#FFFFFF"
+  },
+  "CaseSwitchLabel": {
+    "Color": "#FFFFFF"
+  },
+  "DefaultSwitchLabel": {
+    "Color": "#FFFFFF"
+  },
+  "TryStatement": {
+    "Color": "#FFFFFF"
+  },
+  "CatchClause": {
+    "Color": "#FFFFFF"
+  },
+  "CatchDeclaration": {
+    "Color": "#FFFFFF"
+  },
+  "CatchFilterClause": {
+    "Color": "#FFFFFF"
+  },
+  "FinallyClause": {
+    "Color": "#FFFFFF"
+  },
+  "LocalFunctionStatement": {
+    "Color": "#FFFFFF"
+  },
+  "CompilationUnit": {
+    "Color": "#FFFFFF"
+  },
+  "GlobalStatement": {
+    "Color": "#FFFFFF"
+  },
+  "NamespaceDeclaration": {
+    "Color": "#FFFFFF"
+  },
+  "UsingDirective": {
+    "Color": "#FFFFFF"
+  },
+  "ExternAliasDirective": {
+    "Color": "#FFFFFF"
+  },
+  "FileScopedNamespaceDeclaration": {
+    "Color": "#FFFFFF"
+  },
+  "AttributeList": {
+    "Color": "#FFFFFF"
+  },
+  "AttributeTargetSpecifier": {
+    "Color": "#FFFFFF"
+  },
+  "Attribute": {
+    "Color": "#FFFFFF"
+  },
+  "AttributeArgumentList": {
+    "Color": "#FFFFFF"
+  },
+  "AttributeArgument": {
+    "Color": "#FFFFFF"
+  },
+  "NameEquals": {
+    "Color": "#FFFFFF"
+  },
+  "ClassDeclaration": {
+    "Color": "#FFFFFF"
+  },
+  "StructDeclaration": {
+    "Color": "#FFFFFF"
+  },
+  "InterfaceDeclaration": {
+    "Color": "#FFFFFF"
+  },
+  "EnumDeclaration": {
+    "Color": "#FFFFFF"
+  },
+  "DelegateDeclaration": {
+    "Color": "#FFFFFF"
+  },
+  "BaseList": {
+    "Color": "#FFFFFF"
+  },
+  "SimpleBaseType": {
+    "Color": "#FFFFFF"
+  },
+  "TypeParameterConstraintClause": {
+    "Color": "#FFFFFF"
+  },
+  "ConstructorConstraint": {
+    "Color": "#FFFFFF"
+  },
+  "ClassConstraint": {
+    "Color": "#FFFFFF"
+  },
+  "StructConstraint": {
+    "Color": "#FFFFFF"
+  },
+  "TypeConstraint": {
+    "Color": "#FFFFFF"
+  },
+  "ExplicitInterfaceSpecifier": {
+    "Color": "#FFFFFF"
+  },
+  "EnumMemberDeclaration": {
+    "Color": "#FFFFFF"
+  },
+  "FieldDeclaration": {
+    "Color": "#FFFFFF"
+  },
+  "EventFieldDeclaration": {
+    "Color": "#FFFFFF"
+  },
+  "MethodDeclaration": {
+    "Color": "#FFFFFF"
+  },
+  "OperatorDeclaration": {
+    "Color": "#FFFFFF"
+  },
+  "ConversionOperatorDeclaration": {
+    "Color": "#FFFFFF"
+  },
+  "ConstructorDeclaration": {
+    "Color": "#FFFFFF"
+  },
+  "AllowsConstraintClause": {
+    "Color": "#FFFFFF"
+  },
+  "RefStructConstraint": {
+    "Color": "#FFFFFF"
+  },
+  "BaseConstructorInitializer": {
+    "Color": "#FFFFFF"
+  },
+  "ThisConstructorInitializer": {
+    "Color": "#FFFFFF"
+  },
+  "DestructorDeclaration": {
+    "Color": "#FFFFFF"
+  },
+  "PropertyDeclaration": {
+    "Color": "#FFFFFF"
+  },
+  "EventDeclaration": {
+    "Color": "#FFFFFF"
+  },
+  "IndexerDeclaration": {
+    "Color": "#FFFFFF"
+  },
+  "AccessorList": {
+    "Color": "#FFFFFF"
+  },
+  "GetAccessorDeclaration": {
+    "Color": "#FFFFFF"
+  },
+  "SetAccessorDeclaration": {
+    "Color": "#FFFFFF"
+  },
+  "AddAccessorDeclaration": {
+    "Color": "#FFFFFF"
+  },
+  "RemoveAccessorDeclaration": {
+    "Color": "#FFFFFF"
+  },
+  "UnknownAccessorDeclaration": {
+    "Color": "#FFFFFF"
+  },
+  "ParameterList": {
+    "Color": "#FFFFFF"
+  },
+  "BracketedParameterList": {
+    "Color": "#FFFFFF"
+  },
+  "Parameter": {
+    "Color": "#FFFFFF"
+  },
+  "TypeParameterList": {
+    "Color": "#FFFFFF"
+  },
+  "TypeParameter": {
+    "Color": "#FFFFFF"
+  },
+  "IncompleteMember": {
+    "Color": "#FFFFFF"
+  },
+  "ArrowExpressionClause": {
+    "Color": "#FFFFFF"
+  },
+  "Interpolation": {
+    "Color": "#FFFFFF"
+  },
+  "InterpolatedStringText": {
+    "Color": "#CE9178"
+  },
+  "InterpolationAlignmentClause": {
+    "Color": "#FFFFFF"
+  },
+  "InterpolationFormatClause": {
+    "Color": "#FFFFFF"
+  },
+  "ShebangDirectiveTrivia": {
+    "Color": "#FFFFFF"
+  },
+  "LoadDirectiveTrivia": {
+    "Color": "#FFFFFF"
+  },
+  "TupleType": {
+    "Color": "#FFFFFF"
+  },
+  "TupleElement": {
+    "Color": "#FFFFFF"
+  },
+  "TupleExpression": {
+    "Color": "#FFFFFF"
+  },
+  "SingleVariableDesignation": {
+    "Color": "#FFFFFF"
+  },
+  "ParenthesizedVariableDesignation": {
+    "Color": "#FFFFFF"
+  },
+  "ForEachVariableStatement": {
+    "Color": "#FFFFFF"
+  },
+  "DeclarationPattern": {
+    "Color": "#FFFFFF"
+  },
+  "ConstantPattern": {
+    "Color": "#FFFFFF"
+  },
+  "CasePatternSwitchLabel": {
+    "Color": "#FFFFFF"
+  },
+  "WhenClause": {
+    "Color": "#FFFFFF"
+  },
+  "DiscardDesignation": {
+    "Color": "#FFFFFF"
+  },
+  "RecursivePattern": {
+    "Color": "#FFFFFF"
+  },
+  "PropertyPatternClause": {
+    "Color": "#FFFFFF"
+  },
+  "Subpattern": {
+    "Color": "#FFFFFF"
+  },
+  "PositionalPatternClause": {
+    "Color": "#FFFFFF"
+  },
+  "DiscardPattern": {
+    "Color": "#FFFFFF"
+  },
+  "SwitchExpression": {
+    "Color": "#FFFFFF"
+  },
+  "SwitchExpressionArm": {
+    "Color": "#FFFFFF"
+  },
+  "VarPattern": {
+    "Color": "#FFFFFF"
+  },
+  "ParenthesizedPattern": {
+    "Color": "#FFFFFF"
+  },
+  "RelationalPattern": {
+    "Color": "#FFFFFF"
+  },
+  "TypePattern": {
+    "Color": "#FFFFFF"
+  },
+  "OrPattern": {
+    "Color": "#FFFFFF"
+  },
+  "AndPattern": {
+    "Color": "#FFFFFF"
+  },
+  "NotPattern": {
+    "Color": "#FFFFFF"
+  },
+  "SlicePattern": {
+    "Color": "#FFFFFF"
+  },
+  "ListPattern": {
+    "Color": "#FFFFFF"
+  },
+  "DeclarationExpression": {
+    "Color": "#FFFFFF"
+  },
+  "RefExpression": {
+    "Color": "#FFFFFF"
+  },
+  "RefType": {
+    "Color": "#FFFFFF"
+  },
+  "ThrowExpression": {
+    "Color": "#FFFFFF"
+  },
+  "ImplicitStackAllocArrayCreationExpression": {
+    "Color": "#FFFFFF"
+  },
+  "SuppressNullableWarningExpression": {
+    "Color": "#FFFFFF"
+  },
+  "NullableDirectiveTrivia": {
+    "Color": "#FFFFFF"
+  },
+  "FunctionPointerType": {
+    "Color": "#FFFFFF"
+  },
+  "FunctionPointerParameter": {
+    "Color": "#FFFFFF"
+  },
+  "FunctionPointerParameterList": {
+    "Color": "#FFFFFF"
+  },
+  "FunctionPointerCallingConvention": {
+    "Color": "#FFFFFF"
+  },
+  "InitAccessorDeclaration": {
+    "Color": "#FFFFFF"
+  },
+  "WithExpression": {
+    "Color": "#FFFFFF"
+  },
+  "WithInitializerExpression": {
+    "Color": "#FFFFFF"
+  },
+  "RecordDeclaration": {
+    "Color": "#FFFFFF"
+  },
+  "DefaultConstraint": {
+    "Color": "#FFFFFF"
+  },
+  "PrimaryConstructorBaseType": {
+    "Color": "#FFFFFF"
+  },
+  "FunctionPointerUnmanagedCallingConventionList": {
+    "Color": "#FFFFFF"
+  },
+  "FunctionPointerUnmanagedCallingConvention": {
+    "Color": "#FFFFFF"
+  },
+  "RecordStructDeclaration": {
+    "Color": "#FFFFFF"
+  },
+  "ExpressionColon": {
+    "Color": "#FFFFFF"
+  },
+  "LineDirectivePosition": {
+    "Color": "#FFFFFF"
+  },
+  "LineSpanDirectiveTrivia": {
+    "Color": "#FFFFFF"
+  },
+  "InterpolatedSingleLineRawStringStartToken": {
+    "Color": "#CE9178"
+  },
+  "InterpolatedMultiLineRawStringStartToken": {
+    "Color": "#CE9178"
+  },
+  "InterpolatedRawStringEndToken": {
+    "Color": "#CE9178"
+  },
+  "ScopedType": {
+    "Color": "#FFFFFF"
+  },
+  "CollectionExpression": {
+    "Color": "#FFFFFF"
+  },
+  "ExpressionElement": {
+    "Color": "#FFFFFF"
+  },
+  "SpreadElement": {
+    "Color": "#FFFFFF"
+  }
+}

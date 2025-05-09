@@ -16,7 +16,14 @@ namespace CodeForgeIDE.CSharp.Workspace
 
             if (path.EndsWith(".sln"))
             {
-                var solution = workspace.CurrentSolution;
+                int i = 0;
+                while (((CSharpWorkspace)IDE.Editor.Workspace).Solution is null && i < 100)
+                { 
+                    await Task.Delay(100); // Wait for the solution to be loaded
+                    i++;
+                }
+
+                var solution = /*workspace.CurrentSolution*/ ((CSharpWorkspace)IDE.Editor.Workspace).Solution;
                 var rootNode = new ProjectTreeNode(Icons.Solution, Path.GetFileName(path), path);
 
                 foreach (var project in solution.Projects)

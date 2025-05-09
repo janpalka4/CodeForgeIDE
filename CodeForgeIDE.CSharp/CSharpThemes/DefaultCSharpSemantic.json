@@ -1,0 +1,65 @@
+﻿{
+  "Alias": {
+    "Color": "#FFFFFF"
+  },
+  "ArrayType": {
+    "Color": "#46C9B0"
+  },
+  "Assembly": {
+    "Color": "#FFFFFF"
+  },
+  "DynamicType": {
+    "Color": "#46C9B0"
+  },
+  "ErrorType": {
+    "Color": "#FFFFFF"
+  },
+  "Event": {
+    "Color": "#FFFFFF"
+  },
+  "Field": {
+    "Color": "#FFFFFF"
+  },
+  "Label": {
+    "Color": "#FFFFFF"
+  },
+  "Local": {
+    "Color": "#9CDCFE"
+  },
+  "Method": {
+    "Color": "#DCDCA0"
+  },
+  "NetModule": {
+    "Color": "#FFFFFF"
+  },
+  "NamedType": {
+    "Color": "#46C9B0"
+  },
+  "Namespace": {
+    "Color": "#FFFFFF"
+  },
+  "Parameter": {
+    "Color": "#FFFFFF"
+  },
+  "PointerType": {
+    "Color": "#FFFFFF"
+  },
+  "Property": {
+    "Color": "#FFFFFF"
+  },
+  "RangeVariable": {
+    "Color": "#FFFFFF"
+  },
+  "TypeParameter": {
+    "Color": "#FFFFFF"
+  },
+  "Preprocessing": {
+    "Color": "#FFFFFF"
+  },
+  "Discard": {
+    "Color": "#FFFFFF"
+  },
+  "FunctionPointerType": {
+    "Color": "#FFFFFF"
+  }
+}

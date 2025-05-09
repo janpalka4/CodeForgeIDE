@@ -41,7 +41,7 @@ public partial class DocumentEditor : UserControl
         textEditor.TextChanged += TextEditor_TextChanged;
 
         syntaxHighlighter = IDE.Editor.GetSyntaxHighlighter(FullPath);
-        syntaxHighlighter?.Initialize(textEditor);
+        syntaxHighlighter?.Initialize(textEditor,FullPath);
     }
 
     private void TextEditor_TextChanged(object? sender, EventArgs e)

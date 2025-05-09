@@ -33,10 +33,20 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AvaloniaEdit.TextMate" Version="11.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="TextMate\" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="CSharpThemes\DefaultCSharp.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="CSharpThemes\DefaultCSharpSemantic.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="TextMate\csharp.tmLanguage">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
