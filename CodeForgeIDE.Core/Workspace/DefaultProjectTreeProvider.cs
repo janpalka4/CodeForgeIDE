@@ -1,7 +1,7 @@
 ﻿using CodeForgeIDE.Core.Plugins;
-using CodeForgeIDE.Core.Solution.Model;
+using CodeForgeIDE.Core.Workspace.Model;
 
-namespace CodeForgeIDE.Core.Solution
+namespace CodeForgeIDE.Core.Workspace
 {
     public class DefaultProjectTreeProvider : IProjectTreeProvider
     {

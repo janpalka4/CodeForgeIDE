@@ -32,4 +32,17 @@
     <ProjectReference Include="..\CodeForgeIDE.Core\CodeForgeIDE.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="TextMate\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="TextMate\csharp.tmLanguage">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="TextMate\OneDark-Pro.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

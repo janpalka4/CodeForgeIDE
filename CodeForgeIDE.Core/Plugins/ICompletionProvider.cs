@@ -1,6 +1,6 @@
 ﻿namespace CodeForgeIDE.Core.Plugins
 {
-    public interface ICompletionProvider
+    public interface ICompletionProvider : IFileScopedProvider
     {
     }
 }

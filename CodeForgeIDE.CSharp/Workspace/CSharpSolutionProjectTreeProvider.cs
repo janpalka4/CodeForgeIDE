@@ -1,8 +1,8 @@
 ﻿using CodeForgeIDE.Core;
 using CodeForgeIDE.Core.Plugins;
-using CodeForgeIDE.Core.Solution.Model;
+using CodeForgeIDE.Core.Workspace.Model;
 
-namespace CodeForgeIDE.CSharp.Solution
+namespace CodeForgeIDE.CSharp.Workspace
 {
     public class CSharpSolutionProjectTreeProvider : IProjectTreeProvider
     {
@@ -12,11 +12,11 @@ namespace CodeForgeIDE.CSharp.Solution
                 throw new FileNotFoundException($"The path '{path}' does not exist.");
 
             // Ensure the required namespace is imported and the MSBuildWorkspace is properly referenced  
-            using var workspace = Microsoft.CodeAnalysis.MSBuild.MSBuildWorkspace.Create();
+            using var workspace = ((CSharpWorkspace)IDE.Editor.Workspace).MsBuildWorkspace;
 
             if (path.EndsWith(".sln"))
             {
-                var solution = await workspace.OpenSolutionAsync(path);
+                var solution = workspace.CurrentSolution;
                 var rootNode = new ProjectTreeNode(Icons.Solution, Path.GetFileName(path), path);
 
                 foreach (var project in solution.Projects)
@@ -29,14 +29,14 @@ namespace CodeForgeIDE.CSharp.Solution
             }
             else if (path.EndsWith(".csproj"))
             {
-                var project = await workspace.OpenProjectAsync(path);
+                var project = workspace.CurrentSolution.Projects.FirstOrDefault(x => x.FilePath == path);
                 var projectNode = new ProjectTreeNode(Icons.Project, Path.GetFileNameWithoutExtension(path), path);
 
                 var folderPath = Path.GetDirectoryName(path)!;
 
                 if (!shallow)
                 {
-                    foreach (var document in project.Documents)
+                    foreach (var document in project!.Documents)
                     {
                         if (document is not null && document.FilePath != null) {
                             ProjectTreeNode fileNode = Path.GetExtension(document.FilePath) == ".cs" ? new CSharpFileProjectTreeNode(Path.GetFileName(document.FilePath), document.FilePath) : new ProjectTreeNode(Core.Icons.FileCode, Path.GetFileName(document.FilePath), document.FilePath);

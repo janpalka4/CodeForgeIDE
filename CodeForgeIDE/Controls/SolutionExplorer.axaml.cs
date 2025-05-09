@@ -23,10 +23,10 @@ public partial class SolutionExplorer : UserControl
 
     private async Task LoadProjectTree()
     {
-        if(string.IsNullOrEmpty(IDE.Editor.ProjectRootPath))
+        if(string.IsNullOrEmpty(IDE.Editor.Workspace?.Path))
             return;
 
-        var projectTree = await IDE.Editor.ProjectTreeProvider.GetProjectTree(IDE.Editor.ProjectRootPath);
+        var projectTree = await IDE.Editor.Workspace.ProjectTreeProvider.GetProjectTree(IDE.Editor.Workspace.Path);
 
         if (projectTree != null)
         {

@@ -1,7 +1,10 @@
-﻿using CodeForgeIDE.Core.Plugins;
+﻿using Avalonia;
+using Avalonia.Controls.ApplicationLifetimes;
+using CodeForgeIDE.Core.Plugins;
 using CodeForgeIDE.Core.Services;
-using CodeForgeIDE.Core.Solution;
+using CodeForgeIDE.Core.Workspace;
 using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json;
 using System.Runtime.CompilerServices;
 
 namespace CodeForgeIDE.Core
@@ -13,13 +16,26 @@ namespace CodeForgeIDE.Core
         public event Action<string> OnSelectDocument;
 
         public IServiceProvider ServiceProvider { get; private set; }
-        public IProjectTreeProvider ProjectTreeProvider { get; private set; }
-        public string ProjectRootPath { get; private set; } = string.Empty;
-
+        public EditorConfig Config { get; private set; } = new EditorConfig();
+        public EditorWorkspace? Workspace { get; private set; } = null;
         public List<IIDEPlugin> Plugins { get; private set; } = new List<IIDEPlugin>();
+
+        private Dictionary<Type, Func<string, bool>> workspaceChecks = new Dictionary<Type, Func<string, bool>>();
+
 
         public Editor()
         {
+            Config = LoadConfiguration();
+
+            if(Application.Current!.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
+            {
+                desktop.Exit += Desktop_Exit;
+            }
+        }
+
+        private void Desktop_Exit(object? sender, ControlledApplicationLifetimeExitEventArgs e)
+        {
+            SaveConfiguration();
         }
 
         public IServiceCollection AddCoreServices()
@@ -34,9 +50,9 @@ namespace CodeForgeIDE.Core
             return services;
         }
 
-        public void Initialize(IServiceCollection services, List<IIDEPlugin>? plugins = null)
+        public async void Initialize(IServiceCollection services, List<IIDEPlugin>? plugins = null)
         {
-            if(plugins != null)
+            if (plugins != null)
             {
                 Plugins = plugins;
             }
@@ -49,6 +65,11 @@ namespace CodeForgeIDE.Core
 
             // Use the services
             loggerService.LogInfo("Editor initialized.", "Editor");
+
+            foreach(var plugin in Plugins)
+            {
+                await plugin.EnableAsync();
+            }
         }
 
         public void OpenProjectOrSolution(string path)
@@ -56,22 +77,24 @@ namespace CodeForgeIDE.Core
             // Replace encoded characters in the path  
             path = Uri.UnescapeDataString(path);
 
-            // Select correct provider  
-            var providers = ServiceProvider.GetServices<IProjectTreeProvider>();
-            foreach (var provider in providers)
-            {
-                if (provider.ShouldBeUsed(path) && provider is not DefaultProjectTreeProvider)
-                {
-                    ProjectTreeProvider = provider;
-                    break;
-                }
-            }
-
-            ProjectTreeProvider = ProjectTreeProvider ?? providers.Single(x => x is DefaultProjectTreeProvider);
-            ProjectRootPath = path;
+            // Init workspace
+            Workspace = (EditorWorkspace)(Activator.CreateInstance(workspaceChecks.Where(x => x.Key.IsAssignableTo(typeof(EditorWorkspace)))
+                .First(x => x.Value(path)).Key,path) ?? new EditorWorkspace(path));
 
             // Notify that the project or solution is opened
             OnOpenProjectOrSolution?.Invoke(path);
+
+
+            if (Config.RecentOpenedFiles.FirstOrDefault(x => x.Path == path) is RecentOpenedFile recentFile)
+            {
+                recentFile.LastOpened = DateTime.Now;
+            }
+            else
+            {
+                Config.RecentOpenedFiles.Add(new RecentOpenedFile() { Path = path, LastOpened = DateTime.Now });
+            }
+
+            SaveConfiguration();
         }
 
         public void OpenDocument(string path)
@@ -82,6 +105,46 @@ namespace CodeForgeIDE.Core
         public void SelectDocument(string path)
         {
             OnSelectDocument?.Invoke(path);
+        }
+
+        public void RegisterWorkspaceType<T>(Func<string, bool> check) where T : EditorWorkspace
+        {
+            workspaceChecks.Add(typeof(T), check);
+        }
+        public ISyntaxHighlighter? GetSyntaxHighlighter(string path)
+        {
+            var highlighters = ServiceProvider.GetServices<ISyntaxHighlighter>();
+            foreach (var highlighter in highlighters)
+            {
+                if (highlighter.ShouldBeUsed(path))
+                {
+                    return highlighter;
+                }
+            }
+
+            return null;
+        }
+
+        private EditorConfig LoadConfiguration() { 
+            if(File.Exists("ide/config.json"))
+            {
+                string json = File.ReadAllText("ide/config.json");
+                EditorConfig config = JsonConvert.DeserializeObject<EditorConfig>(json) ?? new EditorConfig();
+                config.RecentOpenedFiles = config.RecentOpenedFiles.OrderByDescending(x => x.LastOpened).Take(25).ToList();
+
+                return config;
+            }
+            else
+            {
+                return new EditorConfig();
+            }
+        }
+
+        private void SaveConfiguration()
+        {
+            string json = JsonConvert.SerializeObject(Config, Formatting.Indented);
+            Directory.CreateDirectory("ide");
+            File.WriteAllText("ide/config.json", json);
         }
     }
 }

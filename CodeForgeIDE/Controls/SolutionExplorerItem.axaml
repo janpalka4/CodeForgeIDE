@@ -1,26 +1,44 @@
-<UserControl xmlns="https://github.com/avaloniaui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-			 xmlns:local="clr-namespace:CodeForgeIDE.Controls"
-			 xmlns:core="clr-namespace:CodeForgeIDE.Core.Controls;assembly=CodeForgeIDE.Core"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="CodeForgeIDE.Controls.SolutionExplorerItem"
-			 x:DataType="local:SolutionExplorerItem">
+<UserControl xmlns="https://github.com/avaloniaui"  
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"  
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"  
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"  
+           xmlns:local="clr-namespace:CodeForgeIDE.Controls"  
+           xmlns:core="clr-namespace:CodeForgeIDE.Core.Controls;assembly=CodeForgeIDE.Core"  
+           mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"  
+           x:Class="CodeForgeIDE.Controls.SolutionExplorerItem"  
+           x:DataType="local:SolutionExplorerItem">  
 
-	<StackPanel Orientation="Vertical">
-		<Grid PointerPressed="Grid_PointerPressed_1">
-			<StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="1">
-				<core:GuiIcon Name="expandIcon" IconPath="avares://CodeForgeIDE/Assets/Icons/caret-right-8.svg" DisableCss="False" Width="8" Height="8" Margin="8 0" PointerPressed="GuiIcon_PointerPressed"/>
-				<core:GuiIcon Name="fileIcon" IconPath="avares://CodeForgeIDE/Assets/Icons/file-folder.svg" Width="24" Height="24"/>
-				<Label Content="{Binding TreeNode.Name}" Margin="8 0" Padding="0 4"/>
-			</StackPanel>
-			<Border Background="{DynamicResource SemiGrey1}" ZIndex="-1" IsVisible="{Binding IsSelected}">
-				
-			</Border>
-		</Grid>
-		<StackPanel Name="ChildStack" Orientation="Vertical" Margin="28 0 0 0">
-
-		</StackPanel>
-	</StackPanel>
+  <StackPanel Orientation="Vertical" Margin="4">  
+      <Grid PointerPressed="Grid_PointerPressed_1">  
+          <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="1">  
+              <core:GuiIcon Name="expandIcon"  
+                            IconPath="avares://CodeForgeIDE/Assets/Icons/caret-right-8.svg"  
+                            DisableCss="False"  
+                            Width="8"  
+                            Height="8"  
+                            Margin="8 0"  
+                            PointerPressed="GuiIcon_PointerPressed" />  
+              <core:GuiIcon Name="fileIcon"  
+                            IconPath="avares://CodeForgeIDE/Assets/Icons/file-folder.svg"  
+                            Width="18"  
+                            Height="18"  
+                            Margin="4 0" />  
+              <Label Content="{Binding TreeNode.Name}"  
+                     Margin="8 0"  
+                     Padding="0 4"  
+                     FontSize="12"  
+                     FontWeight="Bold"  
+                     Foreground="{DynamicResource TextBrush}" />  
+          </StackPanel>  
+          <Border Background="{DynamicResource SemiGrey1}"  
+                  ZIndex="-1"  
+                  IsVisible="{Binding IsSelected}"  
+                  CornerRadius="4">  
+          </Border>  
+      </Grid>  
+      <StackPanel Name="ChildStack"  
+                  Orientation="Vertical"  
+                  Margin="28 0 0 0">  
+      </StackPanel>  
+  </StackPanel>  
 </UserControl>

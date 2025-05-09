@@ -2,7 +2,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using CodeForgeIDE.Core;
-using CodeForgeIDE.Core.Solution.Model;
+using CodeForgeIDE.Core.Workspace.Model;
 using CodeForgeIDE.Core.Util;
 using System;
 using System.Collections;

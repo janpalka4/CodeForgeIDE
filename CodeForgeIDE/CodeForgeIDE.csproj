@@ -68,15 +68,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Update="Controls\DocumentEditor.axaml.cs">
       <DependentUpon>DocumentEditor.axaml</DependentUpon>
     </Compile>
     <Compile Update="Controls\SolutionExplorerItem.axaml.cs">
       <DependentUpon>SolutionExplorerItem.axaml</DependentUpon>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Model\" />
   </ItemGroup>
 </Project>

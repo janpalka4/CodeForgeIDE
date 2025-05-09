@@ -1,6 +1,6 @@
-﻿using CodeForgeIDE.Core.Solution.Model;
+﻿using CodeForgeIDE.Core.Workspace.Model;
 
-namespace CodeForgeIDE.CSharp.Solution
+namespace CodeForgeIDE.CSharp.Workspace
 {
     public class CSharpFileProjectTreeNode : ProjectTreeNode
     {

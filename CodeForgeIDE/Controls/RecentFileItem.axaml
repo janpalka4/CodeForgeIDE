@@ -1,0 +1,21 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:local="clr-namespace:CodeForgeIDE.Controls;assembly=CodeForgeIDE"
+			 xmlns:core="clr-namespace:CodeForgeIDE.Core.Controls;assembly=CodeForgeIDE.Core"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="75"
+			 x:DataType="local:RecentFileItem"
+             x:Class="CodeForgeIDE.Controls.RecentFileItem">
+
+	<Button Width="450" Theme="{DynamicResource OutlineButton}" Click="Button_Click">
+		<StackPanel Name="stackContent" Orientation="Horizontal" VerticalAlignment="Center" Width="450">
+			<core:GuiIcon Name="icon" Width="24" Margin="12 0 16 0"/>
+			<StackPanel Orientation="Vertical">
+				<TextBlock Name="textFileName" Text="Filename" FontSize="14"/>
+				<TextBlock Name="textFileTime" Text="08.05.2025" FontSize="12" Foreground="{DynamicResource SemiGrey6}" Margin="2 2 0 0"/>
+				<TextBlock Name="textFilePath" Text="/File" FontSize="10" Foreground="{DynamicResource SemiGrey6}" Margin="2 2 0 0"/>
+			</StackPanel>
+		</StackPanel>
+	</Button>
+</UserControl>

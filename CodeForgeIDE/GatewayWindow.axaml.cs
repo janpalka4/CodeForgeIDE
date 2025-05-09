@@ -1,9 +1,13 @@
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using Avalonia.Platform.Storage;
+using Avalonia.VisualTree;
+using CodeForgeIDE.Controls;
 using CodeForgeIDE.Core;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CodeForgeIDE;
 
@@ -12,6 +16,26 @@ public partial class GatewayWindow : Window
     public GatewayWindow()
     {
         InitializeComponent();
+
+        IDE.Editor.OnOpenProjectOrSolution += Editor_OnOpenProjectOrSolution;
+    }
+
+    private void Editor_OnOpenProjectOrSolution(string obj)
+    {
+        EditorWindow window = new EditorWindow();
+        window.Show();
+        this.Close();
+    }
+
+    protected override void OnLoaded(RoutedEventArgs e)
+    {
+        base.OnLoaded(e);
+        recentFiles.Children.Clear();
+        foreach (var recentFile in IDE.Editor.Config.RecentOpenedFiles)
+        {
+            RecentFileItem item = new RecentFileItem(recentFile);
+            recentFiles.Children.Add(item);
+        }
     }
 
     private void Button_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)

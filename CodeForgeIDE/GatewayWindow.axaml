@@ -2,6 +2,7 @@
        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	   xmlns:controls="clr-namespace:CodeForgeIDE.Controls;assembly=CodeForgeIDE"
        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
        x:Class="CodeForgeIDE.GatewayWindow"
        Title="GatewayWindow"
@@ -13,55 +14,60 @@
        WindowStartupLocation="CenterScreen"
        Background="{DynamicResource SemiGrey0}">
 
-   <Grid>
-       <StackPanel VerticalAlignment="Stretch" Height="450" Background="{DynamicResource ThemeBackgroundBrush}">
-           <Grid>
-               <Grid.ColumnDefinitions>
-                   <ColumnDefinition/>
-                   <ColumnDefinition Width="50"/>
-               </Grid.ColumnDefinitions>
-               <Label Content="Code Forge" Margin="18" FontSize="28" Foreground="White" FontWeight="Bold"/>
-               <Button x:Name="closeButton" Theme="{DynamicResource BorderlessButton}" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="8" Grid.Column="1" Click="Button_Click">
-                   <Svg Path="/Assets/Icons/chrome-close.svg" Width="16"/>
-               </Button>
-           </Grid>
-           <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" Height="365">
-               <Border BorderBrush="#555555" BorderThickness="1" CornerRadius="8" Margin="8 0 0 8" Background="{DynamicResource ThemeBackgroundBrush}">
-                   <StackPanel VerticalAlignment="Stretch" Width="500">
-                       <TextBlock Text="Recent projects" Margin="12" FontSize="24" Foreground="White" FontWeight="SemiBold"/>
-                   </StackPanel>
-               </Border>
-               <Border BorderBrush="#555555" BorderThickness="1" CornerRadius="8" Margin="8 0 0 8" Background="{DynamicResource ThemeBackgroundBrush}">
-                   <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Width="300">
-                       <TextBlock Margin="12" FontSize="24" Foreground="White" FontWeight="SemiBold">Get started</TextBlock>
-                       <Button x:Name="buttonCreate" Click="Button_Click_Create" Theme="{DynamicResource OutlineButton}" Classes="Tertiary" Margin="8 24 8 8" Width="284" Background="#4CAF50" Foreground="White">
-                           <StackPanel Orientation="Horizontal">
-                               <Svg Path="/Assets/Icons/tab-desktop-multiple-sparkle-16-filled.svg" Width="16"/>
-                               <TextBlock Text="Create new project" Margin="12 0 0 0"/>
-                           </StackPanel>
-                       </Button>
-                       <Button x:Name="buttonOpen" Click="Button_Click_Open" Theme="{DynamicResource OutlineButton}" Classes="Tertiary" Margin="8" Width="284" Background="#2196F3" Foreground="White">
-                           <StackPanel Orientation="Horizontal">
-                               <Svg Path="/Assets/Icons/open-in-new-tab.svg" Width="16"/>
-                               <TextBlock Text="Open existing project or solution" Margin="12 0 0 0"/>
-                           </StackPanel>
-                       </Button>
-                       <Button x:Name="buttonOpenFolder" Click="Button_Click_OpenFolder" Theme="{DynamicResource OutlineButton}" Classes="Tertiary" Margin="8" Width="284" Background="#FFC107" Foreground="White">
-                           <StackPanel Orientation="Horizontal">
-                               <Svg Path="/Assets/Icons/folder-open-24-filled.svg" Width="16"/>
-                               <TextBlock Text="Open folder" Margin="12 0 0 0"/>
-                           </StackPanel>
-                       </Button>
-                       <Button x:Name="buttonPreferences" Click="Button_Click_Preferences" Theme="{DynamicResource OutlineButton}" Classes="Tertiary" Margin="8" Width="284" Background="#9C27B0" Foreground="White">
-                           <StackPanel Orientation="Horizontal">
-                               <Svg Path="/Assets/Icons/cog.svg" Width="16"/>
-                               <TextBlock Text="Preferences" Margin="12 0 0 0"/>
-                           </StackPanel>
-                       </Button>
-                   </StackPanel>
-               </Border>
-           </StackPanel>
-       </StackPanel>
-   </Grid>
+	<Grid>
+		<StackPanel VerticalAlignment="Stretch" Height="450" Background="{DynamicResource ThemeBackgroundBrush}">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+					<ColumnDefinition Width="50"/>
+				</Grid.ColumnDefinitions>
+				<Label Content="Code Forge" Margin="18" FontSize="28" Foreground="White" FontWeight="Bold"/>
+				<Button x:Name="closeButton" Theme="{DynamicResource BorderlessButton}" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="8" Grid.Column="1" Click="Button_Click">
+					<Svg Path="/Assets/Icons/chrome-close.svg" Width="16"/>
+				</Button>
+			</Grid>
+			<StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" Height="365">
+				<Border BorderBrush="#555555" BorderThickness="1" CornerRadius="8" Margin="8 0 0 8" Background="{DynamicResource ThemeBackgroundBrush}">
+					<StackPanel VerticalAlignment="Stretch" Width="500">
+						<TextBlock Text="Recent projects" Margin="12" FontSize="24" Foreground="White" FontWeight="SemiBold"/>
+						<ScrollViewer>
+							<StackPanel Name="recentFiles" Orientation="Vertical" Margin="12 8">
+								<controls:RecentFileItem />
+							</StackPanel>
+						</ScrollViewer>
+					</StackPanel>
+				</Border>
+				<Border BorderBrush="#555555" BorderThickness="1" CornerRadius="8" Margin="8 0 0 8" Background="{DynamicResource ThemeBackgroundBrush}">
+					<StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Width="300">
+						<TextBlock Margin="12" FontSize="24" Foreground="White" FontWeight="SemiBold">Get started</TextBlock>
+						<Button x:Name="buttonCreate" Click="Button_Click_Create" Theme="{DynamicResource OutlineButton}" Classes="Tertiary" Margin="8 24 8 8" Width="284" Background="#4CAF50" Foreground="White">
+							<StackPanel Orientation="Horizontal">
+								<Svg Path="/Assets/Icons/tab-desktop-multiple-sparkle-16-filled.svg" Width="16"/>
+								<TextBlock Text="Create new project" Margin="12 0 0 0"/>
+							</StackPanel>
+						</Button>
+						<Button x:Name="buttonOpen" Click="Button_Click_Open" Theme="{DynamicResource OutlineButton}" Classes="Tertiary" Margin="8" Width="284" Background="#2196F3" Foreground="White">
+							<StackPanel Orientation="Horizontal">
+								<Svg Path="/Assets/Icons/open-in-new-tab.svg" Width="16"/>
+								<TextBlock Text="Open existing project or solution" Margin="12 0 0 0"/>
+							</StackPanel>
+						</Button>
+						<Button x:Name="buttonOpenFolder" Click="Button_Click_OpenFolder" Theme="{DynamicResource OutlineButton}" Classes="Tertiary" Margin="8" Width="284" Background="#FFC107" Foreground="White">
+							<StackPanel Orientation="Horizontal">
+								<Svg Path="/Assets/Icons/folder-open-24-filled.svg" Width="16"/>
+								<TextBlock Text="Open folder" Margin="12 0 0 0"/>
+							</StackPanel>
+						</Button>
+						<Button x:Name="buttonPreferences" Click="Button_Click_Preferences" Theme="{DynamicResource OutlineButton}" Classes="Tertiary" Margin="8" Width="284" Background="#9C27B0" Foreground="White">
+							<StackPanel Orientation="Horizontal">
+								<Svg Path="/Assets/Icons/cog.svg" Width="16"/>
+								<TextBlock Text="Preferences" Margin="12 0 0 0"/>
+							</StackPanel>
+						</Button>
+					</StackPanel>
+				</Border>
+			</StackPanel>
+		</StackPanel>
+	</Grid>
 
 </Window>

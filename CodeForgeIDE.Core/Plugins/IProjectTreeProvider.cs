@@ -1,11 +1,10 @@
-﻿using CodeForgeIDE.Core.Solution.Model;
+﻿using CodeForgeIDE.Core.Workspace.Model;
 
 namespace CodeForgeIDE.Core.Plugins
 {
-    public interface IProjectTreeProvider
+    public interface IProjectTreeProvider : IFileScopedProvider
     {
         public Task<ProjectTreeNode> GetProjectTree(string projectPath);
         public Task<ProjectTreeNode> GetProjectNode(string path, bool shallow = false);
-        public bool ShouldBeUsed(string path);
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace CodeForgeIDE.Core.Solution.Model
+﻿namespace CodeForgeIDE.Core.Workspace.Model
 {
     public class ProjectTreeNode
     {
