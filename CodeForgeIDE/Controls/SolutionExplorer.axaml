@@ -5,6 +5,8 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="CodeForgeIDE.Controls.SolutionExplorer">
 
-	<StackPanel Name="stackContent" Orientation="Vertical">
-	</StackPanel>
+	<ScrollViewer>
+		<StackPanel Name="stackContent" Orientation="Vertical">
+		</StackPanel>
+	</ScrollViewer>
 </UserControl>

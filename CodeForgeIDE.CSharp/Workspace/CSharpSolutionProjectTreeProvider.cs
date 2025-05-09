@@ -6,6 +6,9 @@ namespace CodeForgeIDE.CSharp.Workspace
 {
     public class CSharpSolutionProjectTreeProvider : IProjectTreeProvider
     {
+        //TODO: Přepsat aby to fungovalo jak pro .sln soubory tak pro .csproj soubory
+        //TODO: Podpora Solution folders
+        //TODO: Spíše načítat podle adresářové strktury
         public async Task<ProjectTreeNode> GetProjectNode(string path, bool shallow = false)
         {
             if (!File.Exists(path) && !Directory.Exists(path))
@@ -17,7 +20,7 @@ namespace CodeForgeIDE.CSharp.Workspace
             if (path.EndsWith(".sln"))
             {
                 int i = 0;
-                while (IDE.Editor.GetWorkspaceAs<CSharpWorkspace>().Solution is null && i < 100)
+                while (IDE.Editor.GetWorkspaceAs<CSharpWorkspace>().Solution is null && i < 100000)
                 { 
                     await Task.Delay(100); // Wait for the solution to be loaded
                     i++;
@@ -39,7 +42,7 @@ namespace CodeForgeIDE.CSharp.Workspace
             }
             else if (path.EndsWith(".csproj"))
             {
-                var project = workspace?.CurrentSolution.Projects.FirstOrDefault(x => x.FilePath == path);
+                var project = IDE.Editor.GetWorkspaceAs<CSharpWorkspace>().Solution!.Projects.FirstOrDefault(x => x.FilePath == path);
                 var projectNode = new ProjectTreeNode(Icons.Project, Path.GetFileNameWithoutExtension(path), path);
 
                 var folderPath = Path.GetDirectoryName(path)!;
