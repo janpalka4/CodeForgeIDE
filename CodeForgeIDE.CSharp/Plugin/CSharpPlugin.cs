@@ -24,7 +24,6 @@ namespace CodeForgeIDE.CSharp.Plugin
         public async Task LoadAsync(IServiceCollection services)
         {
             services.AddSingleton<IProjectTreeProvider,CSharpSolutionProjectTreeProvider>();
-            services.AddScoped<ISyntaxHighlighter, CSharpSyntaxHighlighter>();
         }
     }
 }

@@ -10,7 +10,7 @@ namespace CodeForgeIDE.Logic
 {
     public class EditorInitializer
     {
-        public event Action<string> OnInitializationInfo;
+        public event Action<string>? OnInitializationInfo;
 
         public async Task InitializeEditor()
         {

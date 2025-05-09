@@ -26,7 +26,7 @@ public partial class SolutionExplorer : UserControl
         if(string.IsNullOrEmpty(IDE.Editor.Workspace?.Path))
             return;
 
-        var projectTree = await IDE.Editor.Workspace.ProjectTreeProvider.GetProjectTree(IDE.Editor.Workspace.Path);
+        var projectTree = await IDE.Editor.Workspace!.ProjectTreeProvider!.GetProjectTree(IDE.Editor.Workspace.Path);
 
         if (projectTree != null)
         {

@@ -5,7 +5,7 @@ namespace CodeForgeIDE
 {
     public partial class MainWindow : Window
     {
-        private EditorInitializer _editorInitializer;
+        private EditorInitializer? _editorInitializer;
         public MainWindow()
         {
             InitializeComponent();

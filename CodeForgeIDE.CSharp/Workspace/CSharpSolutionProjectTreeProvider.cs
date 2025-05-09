@@ -12,23 +12,26 @@ namespace CodeForgeIDE.CSharp.Workspace
                 throw new FileNotFoundException($"The path '{path}' does not exist.");
 
             // Ensure the required namespace is imported and the MSBuildWorkspace is properly referenced  
-            using var workspace = ((CSharpWorkspace)IDE.Editor.Workspace).MsBuildWorkspace;
+            using var workspace = IDE.Editor.GetWorkspaceAs<CSharpWorkspace>().MsBuildWorkspace;
 
             if (path.EndsWith(".sln"))
             {
                 int i = 0;
-                while (((CSharpWorkspace)IDE.Editor.Workspace).Solution is null && i < 100)
+                while (IDE.Editor.GetWorkspaceAs<CSharpWorkspace>().Solution is null && i < 100)
                 { 
                     await Task.Delay(100); // Wait for the solution to be loaded
                     i++;
                 }
 
-                var solution = /*workspace.CurrentSolution*/ ((CSharpWorkspace)IDE.Editor.Workspace).Solution;
+                var solution = /*workspace.CurrentSolution*/ IDE.Editor.GetWorkspaceAs<CSharpWorkspace>().Solution;
                 var rootNode = new ProjectTreeNode(Icons.Solution, Path.GetFileName(path), path);
+
+                if (solution is null)
+                    throw new InvalidOperationException("Solution is null. Ensure the solution is loaded.");
 
                 foreach (var project in solution.Projects)
                 {
-                    var projectNode = await GetProjectNode(project.FilePath, shallow);
+                    var projectNode = await GetProjectNode(project.FilePath ?? "", shallow);
                     rootNode.AddChild(projectNode);
                 }
 
@@ -36,7 +39,7 @@ namespace CodeForgeIDE.CSharp.Workspace
             }
             else if (path.EndsWith(".csproj"))
             {
-                var project = workspace.CurrentSolution.Projects.FirstOrDefault(x => x.FilePath == path);
+                var project = workspace?.CurrentSolution.Projects.FirstOrDefault(x => x.FilePath == path);
                 var projectNode = new ProjectTreeNode(Icons.Project, Path.GetFileNameWithoutExtension(path), path);
 
                 var folderPath = Path.GetDirectoryName(path)!;

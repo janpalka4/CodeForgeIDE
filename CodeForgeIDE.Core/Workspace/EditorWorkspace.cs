@@ -10,7 +10,7 @@ namespace CodeForgeIDE.Core.Workspace
 {
     public class EditorWorkspace
     {
-        public IProjectTreeProvider ProjectTreeProvider { get; private set; }
+        public IProjectTreeProvider? ProjectTreeProvider { get; private set; }
         public string Path { get; set; }
 
         public EditorWorkspace(string path) 
@@ -22,7 +22,7 @@ namespace CodeForgeIDE.Core.Workspace
 
         public virtual void Initialize()
         {
-            ProjectTreeProvider = IDE.Editor.ServiceProvider.GetProviderForFile<IProjectTreeProvider, DefaultProjectTreeProvider>(Path);
+            ProjectTreeProvider = IDE.Editor.ServiceProvider!.GetProviderForFile<IProjectTreeProvider, DefaultProjectTreeProvider>(Path);
         }
     }
 }

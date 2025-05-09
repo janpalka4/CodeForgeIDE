@@ -11,11 +11,11 @@ namespace CodeForgeIDE.Core
 {
     public class Editor
     {
-        public event Action<string> OnOpenProjectOrSolution;
-        public event Action<string> OnOpenDocument;
-        public event Action<string> OnSelectDocument;
+        public event Action<string>? OnOpenProjectOrSolution;
+        public event Action<string>? OnOpenDocument;
+        public event Action<string>? OnSelectDocument;
 
-        public IServiceProvider ServiceProvider { get; private set; }
+        public IServiceProvider? ServiceProvider { get; private set; }
         public EditorConfig Config { get; private set; } = new EditorConfig();
         public EditorWorkspace? Workspace { get; private set; } = null;
         public List<IIDEPlugin> Plugins { get; private set; } = new List<IIDEPlugin>();
@@ -111,18 +111,17 @@ namespace CodeForgeIDE.Core
         {
             workspaceChecks.Add(typeof(T), check);
         }
-        public ISyntaxHighlighter? GetSyntaxHighlighter(string path)
-        {
-            var highlighters = ServiceProvider.GetServices<ISyntaxHighlighter>();
-            foreach (var highlighter in highlighters)
-            {
-                if (highlighter.ShouldBeUsed(path))
-                {
-                    return highlighter;
-                }
-            }
 
-            return null;
+        public T GetWorkspaceAs<T>() where T : EditorWorkspace
+        {
+            if (Workspace is T workspace)
+            {
+                return workspace;
+            }
+            else
+            {
+                throw new InvalidOperationException($"The current workspace is not of type {typeof(T).Name}.");
+            }
         }
 
         private EditorConfig LoadConfiguration() { 

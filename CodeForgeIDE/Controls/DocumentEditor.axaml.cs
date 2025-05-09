@@ -4,16 +4,16 @@ using Avalonia.Markup.Xaml;
 using CodeForgeIDE.Core;
 using CodeForgeIDE.Core.Plugins;
 using CodeForgeIDE.Core.Util;
+using CodeForgeIDE.CSharp.Lang.DocumentTransformers;
+using CodeForgeIDE.CSharp.Workspace;
 using System;
 
 namespace CodeForgeIDE.Controls;
 
 public partial class DocumentEditor : UserControl
 {
-    public string Filename { get; set; }
-    public string FullPath { get; set; }
-
-    private ISyntaxHighlighter? syntaxHighlighter;
+    public string Filename { get; set; } = "";
+    public string FullPath { get; set; } = "";
 
     public DocumentEditor()
     {
@@ -38,14 +38,9 @@ public partial class DocumentEditor : UserControl
             return;
 
         textEditor.Text = System.IO.File.ReadAllText(FullPath);
-        textEditor.TextChanged += TextEditor_TextChanged;
 
-        syntaxHighlighter = IDE.Editor.GetSyntaxHighlighter(FullPath);
-        syntaxHighlighter?.Initialize(textEditor,FullPath);
-    }
-
-    private void TextEditor_TextChanged(object? sender, EventArgs e)
-    {
-        syntaxHighlighter?.Update(textEditor.Text);
+        //syntaxHighlighter = IDE.Editor.GetSyntaxHighlighter(FullPath);
+        //syntaxHighlighter?.Initialize(textEditor,FullPath);
+        textEditor.TextArea.TextView.LineTransformers.Add(new CSharpDocumentTransformer(IDE.Editor.GetWorkspaceAs<CSharpWorkspace>().GetDocument(FullPath)!));
     }
 }

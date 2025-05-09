@@ -40,6 +40,6 @@ namespace CodeForgeIDE.Core.Lang
     {
         public int Start { get; set; }
         public int Length { get; set; }
-        public IBrush Brush { get; set; }
+        public IBrush Brush { get; set; } = Brushes.White;
     }
 }

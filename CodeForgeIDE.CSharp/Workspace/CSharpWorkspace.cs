@@ -7,8 +7,8 @@ namespace CodeForgeIDE.CSharp.Workspace
 {
     public class CSharpWorkspace : EditorWorkspace
     {
-        public MSBuildWorkspace MsBuildWorkspace { get; private set; }
-        public Solution Solution { get; private set; }
+        public MSBuildWorkspace? MsBuildWorkspace { get; private set; }
+        public Solution? Solution { get; private set; }
 
         public CSharpWorkspace(string path) : base(path)
         {
@@ -35,9 +35,9 @@ namespace CodeForgeIDE.CSharp.Workspace
             var comp = CSharpCompilation.Create;
         }
 
-        public Document GetDocument(string path)
+        public Document? GetDocument(string path)
         {
-            var project = Solution.Projects.FirstOrDefault(p => p.Documents.Any(d => d.FilePath == path));
+            var project = Solution?.Projects.FirstOrDefault(p => p.Documents.Any(d => d.FilePath == path));
             if (project != null)
             {
                 var document = project.Documents.FirstOrDefault(d => d.FilePath == path);
