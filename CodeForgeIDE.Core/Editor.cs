@@ -3,6 +3,7 @@ using Avalonia.Controls.ApplicationLifetimes;
 using CodeForgeIDE.Core.Plugins;
 using CodeForgeIDE.Core.Services;
 using CodeForgeIDE.Core.Workspace;
+using CodeForgeIDE.CSharp.Workspace;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
 using System.Runtime.CompilerServices;
@@ -21,7 +22,7 @@ namespace CodeForgeIDE.Core
         public List<IIDEPlugin> Plugins { get; private set; } = new List<IIDEPlugin>();
 
         private Dictionary<Type, Func<string, bool>> workspaceChecks = new Dictionary<Type, Func<string, bool>>();
-
+        private ProjectLoader? _projectLoader;
 
         public Editor()
         {
@@ -70,9 +71,15 @@ namespace CodeForgeIDE.Core
             {
                 await plugin.EnableAsync();
             }
+
+            // Initialize ProjectLoader with the workspace
+            if (Workspace is CSharpWorkspace csharpWorkspace)
+            {
+                _projectLoader = new ProjectLoader(csharpWorkspace);
+            }
         }
 
-        public void OpenProjectOrSolution(string path)
+        public async void OpenProjectOrSolution(string path)
         {
             // Replace encoded characters in the path  
             path = Uri.UnescapeDataString(path);
@@ -84,6 +91,22 @@ namespace CodeForgeIDE.Core
             // Notify that the project or solution is opened
             OnOpenProjectOrSolution?.Invoke(path);
 
+            // Use ProjectLoader to load the project or solution
+            if (_projectLoader != null)
+            {
+                if (path.EndsWith(".sln"))
+                {
+                    await _projectLoader.LoadSolutionAsync(path);
+                }
+                else if (path.EndsWith(".csproj"))
+                {
+                    await _projectLoader.LoadProjectAsync(path);
+                }
+                else
+                {
+                    await _projectLoader.LoadFolderAsync(path);
+                }
+            }
 
             if (Config.RecentOpenedFiles.FirstOrDefault(x => x.Path == path) is RecentOpenedFile recentFile)
             {
