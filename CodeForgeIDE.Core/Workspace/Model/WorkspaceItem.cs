@@ -1,30 +1,30 @@
 ﻿namespace CodeForgeIDE.Core.Workspace.Model
 {
-    public class ProjectTreeNode
+    public class WorkspaceItem
     {
         public IconData Icon { get; set; } = Icons.FileCode;
         public string Name { get; set; } = "Untitled";
         public string FullPath { get; set; } = "";
         public bool IsFile { get => !string.IsNullOrEmpty(FullPath) && File.Exists(FullPath); }
         public bool IsDirectory { get => !string.IsNullOrEmpty(FullPath) && Directory.Exists(FullPath); }
-        public ProjectTreeNode? Parent { get; private set; } = null;
-        public IReadOnlyList<ProjectTreeNode> Children { get => _children.AsReadOnly(); }
+        public virtual WorkspaceItem? Parent { get; private set; } = null;
+        public virtual IReadOnlyList<WorkspaceItem> Children { get => _children.AsReadOnly(); }
 
-        private List<ProjectTreeNode> _children { get; set; } = new List<ProjectTreeNode>();
+        protected List<WorkspaceItem> _children { get; set; } = new List<WorkspaceItem>();
 
-        public ProjectTreeNode()
+        public WorkspaceItem()
         {
 
         }
 
-        public ProjectTreeNode(IconData icon, string name, string fullPath)
+        public WorkspaceItem(IconData icon, string name, string fullPath)
         {
             Icon = icon;
             Name = name;
             FullPath = fullPath;
         }
 
-        public void AddChild(ProjectTreeNode child)
+        public void AddChild(WorkspaceItem child)
         {
             if (child == null) return;
 
@@ -34,7 +34,7 @@
             _children.Add(child);
         }
 
-        public void RemoveChild(ProjectTreeNode child)
+        public void RemoveChild(WorkspaceItem child)
         {
             if (child == null) return;
 

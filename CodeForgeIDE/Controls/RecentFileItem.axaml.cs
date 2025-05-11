@@ -2,6 +2,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using CodeForgeIDE.Core;
+using System;
 using System.IO;
 using System.Reflection.Metadata.Ecma335;
 
@@ -9,6 +10,8 @@ namespace CodeForgeIDE.Controls;
 
 public partial class RecentFileItem : UserControl
 {
+    public event EventHandler<string> OnClick;
+
     private RecentOpenedFile? _recentFile;
     public RecentFileItem()
     {
@@ -65,6 +68,6 @@ public partial class RecentFileItem : UserControl
         if (_recentFile == null)
             return;
 
-        IDE.Editor.OpenProjectOrSolution(_recentFile.Path);
+        OnClick?.Invoke(this, _recentFile.Path);
     }
 }

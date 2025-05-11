@@ -12,7 +12,7 @@ namespace CodeForgeIDE.Controls;
 
 public partial class SolutionExplorerItem : UserControl
 {
-    public ProjectTreeNode TreeNode { get; set; } = new ProjectTreeNode();
+    public WorkspaceItem TreeNode { get; set; } = new WorkspaceItem();
     public bool IsExpanded { get; set; } = false;
     public bool IsSelected { get; set; } = false;
     public bool IsExpandable { get => TreeNode?.Children.Count > 0; }
@@ -24,7 +24,7 @@ public partial class SolutionExplorerItem : UserControl
         this.DataContext = this;
     }
 
-    public SolutionExplorerItem(ProjectTreeNode projectTreeNode)
+    public SolutionExplorerItem(WorkspaceItem projectTreeNode)
     {
         InitializeComponent();
 

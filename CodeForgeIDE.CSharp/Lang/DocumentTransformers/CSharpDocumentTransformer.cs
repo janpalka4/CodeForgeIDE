@@ -2,8 +2,11 @@
 using Avalonia.Media.TextFormatting;
 using AvaloniaEdit.Document;
 using AvaloniaEdit.Rendering;
+using CodeForgeIDE.Core;
 using CodeForgeIDE.Core.Lang;
+using CodeForgeIDE.Core.Plugins;
 using CodeForgeIDE.Core.Util;
+using CodeForgeIDE.CSharp.Workspace;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Text;
@@ -16,7 +19,7 @@ namespace CodeForgeIDE.CSharp.Lang.DocumentTransformers
     /// grouping tokens and comments by line and applying appropriate colors based on predefined styles.  
     /// This class integrates with AvaloniaEdit to provide a rich text editing experience.  
     /// </summary>
-    public class CSharpDocumentTransformer : DocumentColorizingTransformer
+    public class CSharpDocumentTransformer : SyntaxHighlightTransformer
     {
         // The Roslyn Document representing the source code to be transformed  
         private Document document { get; set; }
@@ -31,9 +34,9 @@ namespace CodeForgeIDE.CSharp.Lang.DocumentTransformers
         private Dictionary<int, List<SyntaxTrivia>> _commentsByLine = new();
 
         // Constructor to initialize the transformer with a Roslyn Document  
-        public CSharpDocumentTransformer(Document document)
+        public CSharpDocumentTransformer(string path) : base(path)
         {
-            this.document = document;
+            this.document = IDE.Editor.GetWorkspaceAs<CSharpWorkspace>().GetDocument(path)!;
         }
 
         // Main method to colorize the document by analyzing its syntax and semantics  

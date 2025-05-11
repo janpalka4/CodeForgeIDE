@@ -1,12 +1,18 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using AvaloniaEdit.TextMate;
+using AvaloniaEdit.Utils;
 using CodeForgeIDE.Core;
 using CodeForgeIDE.Core.Plugins;
 using CodeForgeIDE.Core.Util;
 using CodeForgeIDE.CSharp.Lang.DocumentTransformers;
 using CodeForgeIDE.CSharp.Workspace;
 using System;
+using System.Collections.Generic;
+using System.IO;
+using TextMateSharp.Grammars;
+using TextMateSharp.Registry;
 
 namespace CodeForgeIDE.Controls;
 
@@ -39,8 +45,15 @@ public partial class DocumentEditor : UserControl
 
         textEditor.Text = System.IO.File.ReadAllText(FullPath);
 
-        //syntaxHighlighter = IDE.Editor.GetSyntaxHighlighter(FullPath);
-        //syntaxHighlighter?.Initialize(textEditor,FullPath);
-        textEditor.TextArea.TextView.LineTransformers.Add(new CSharpDocumentTransformer(IDE.Editor.GetWorkspaceAs<CSharpWorkspace>().GetDocument(FullPath)!));
+        List<SyntaxHighlightTransformer> transformers = IDE.Editor.GetDocumentColorizingTransformers(FullPath);
+        textEditor.TextArea.TextView.LineTransformers.AddRange(transformers);
+
+        // Add TextMate grammar
+        if (transformers.Count == 0)
+        {
+            IRegistryOptions registryOptions = new RegistryOptions(ThemeName.DarkPlus);
+            TextMate.Installation installation = textEditor.InstallTextMate(registryOptions);
+            installation.SetGrammar("source" + Path.GetExtension(FullPath));
+        }
     }
 }

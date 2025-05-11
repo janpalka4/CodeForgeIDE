@@ -15,6 +15,11 @@
        Background="{DynamicResource SemiGrey0}">
 
 	<Grid>
+		<Panel Name="panelLoading" Background="Black" Opacity="0.5" ZIndex="1" IsVisible="False">
+			<StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <ProgressBar Theme="{DynamicResource ProgressRing}" Width="50" Height="50" IsIndeterminate="True"/>
+			</StackPanel>
+		</Panel>
 		<StackPanel VerticalAlignment="Stretch" Height="450" Background="{DynamicResource ThemeBackgroundBrush}">
 			<Grid>
 				<Grid.ColumnDefinitions>

@@ -10,19 +10,16 @@ namespace CodeForgeIDE.Core.Workspace
 {
     public class EditorWorkspace
     {
-        public IProjectTreeProvider? ProjectTreeProvider { get; private set; }
-        public string Path { get; set; }
+        public string FullPath { get; set; }
 
         public EditorWorkspace(string path) 
         {
-            Path = path;
-
-            Initialize();
+            FullPath = path;
         }
 
-        public virtual void Initialize()
+        public virtual Task Initialize()
         {
-            ProjectTreeProvider = IDE.Editor.ServiceProvider!.GetProviderForFile<IProjectTreeProvider, DefaultProjectTreeProvider>(Path);
+            return Task.CompletedTask;
         }
     }
 }

@@ -16,15 +16,6 @@ public partial class GatewayWindow : Window
     public GatewayWindow()
     {
         InitializeComponent();
-
-        IDE.Editor.OnOpenProjectOrSolution += Editor_OnOpenProjectOrSolution;
-    }
-
-    private void Editor_OnOpenProjectOrSolution(string obj)
-    {
-        EditorWindow window = new EditorWindow();
-        window.Show();
-        this.Close();
     }
 
     protected override void OnLoaded(RoutedEventArgs e)
@@ -34,6 +25,10 @@ public partial class GatewayWindow : Window
         foreach (var recentFile in IDE.Editor.Config.RecentOpenedFiles)
         {
             RecentFileItem item = new RecentFileItem(recentFile);
+            item.OnClick += (sender, e) =>
+            {
+                OpenProjectOrSolution(e);
+            };
             recentFiles.Children.Add(item);
         }
     }
@@ -73,13 +68,7 @@ public partial class GatewayWindow : Window
             return;
 
         //Load project or solution
-        IDE.Editor.OpenProjectOrSolution(files[0].Path.AbsolutePath);
-
-        //Open editor
-        EditorWindow window = new EditorWindow();
-        window.Show();
-
-        Close();
+        OpenProjectOrSolution(files[0].Path.AbsolutePath);
     }
 
     private void Button_Click_Preferences(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
@@ -105,13 +94,23 @@ public partial class GatewayWindow : Window
             return;
 
         //Load project or solution
-        IDE.Editor.OpenProjectOrSolution(folders[0].Path.AbsolutePath);
+        OpenProjectOrSolution(folders[0].Path.AbsolutePath);
+    }
 
-        //Open editor
-        EditorWindow window = new EditorWindow();
-        window.Show();
+    private void OpenProjectOrSolution(string path)
+    {
+        panelLoading.IsVisible = true;
 
-        Close();
+        IDE.Editor.OnWorkspaceLoaded += () =>
+        {
+            panelLoading.IsVisible = false;
+            EditorWindow window = new EditorWindow();
+            window.Show();
+
+            Close();
+        };
+
+        IDE.Editor.OpenProjectOrSolution(path);
     }
 
 }

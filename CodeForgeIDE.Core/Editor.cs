@@ -1,12 +1,11 @@
 ﻿using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
+using AvaloniaEdit.Rendering;
 using CodeForgeIDE.Core.Plugins;
 using CodeForgeIDE.Core.Services;
 using CodeForgeIDE.Core.Workspace;
-using CodeForgeIDE.CSharp.Workspace;
 using Microsoft.Extensions.DependencyInjection;
 using Newtonsoft.Json;
-using System.Runtime.CompilerServices;
 
 namespace CodeForgeIDE.Core
 {
@@ -15,14 +14,15 @@ namespace CodeForgeIDE.Core
         public event Action<string>? OnOpenProjectOrSolution;
         public event Action<string>? OnOpenDocument;
         public event Action<string>? OnSelectDocument;
+        public event Action OnWorkspaceLoaded;
 
         public IServiceProvider? ServiceProvider { get; private set; }
         public EditorConfig Config { get; private set; } = new EditorConfig();
         public EditorWorkspace? Workspace { get; private set; } = null;
         public List<IIDEPlugin> Plugins { get; private set; } = new List<IIDEPlugin>();
 
-        private Dictionary<Type, Func<string, bool>> workspaceChecks = new Dictionary<Type, Func<string, bool>>();
-        private ProjectLoader? _projectLoader;
+        private Dictionary<Type, Func<string, bool>> WorkspaceTypeValidators = new Dictionary<Type, Func<string, bool>>();
+        private Dictionary<string,List<Type>> DocumentColorizingTransformers = new Dictionary<string, List<Type>>();
 
         public Editor()
         {
@@ -45,8 +45,6 @@ namespace CodeForgeIDE.Core
 
             services.AddSingleton<ILoggerService, LoggerService>();
             services.AddSingleton<IFileService, FileService>();
-
-            services.AddSingleton<IProjectTreeProvider, DefaultProjectTreeProvider>();
 
             return services;
         }
@@ -71,12 +69,6 @@ namespace CodeForgeIDE.Core
             {
                 await plugin.EnableAsync();
             }
-
-            // Initialize ProjectLoader with the workspace
-            if (Workspace is CSharpWorkspace csharpWorkspace)
-            {
-                _projectLoader = new ProjectLoader(csharpWorkspace);
-            }
         }
 
         public async void OpenProjectOrSolution(string path)
@@ -85,28 +77,13 @@ namespace CodeForgeIDE.Core
             path = Uri.UnescapeDataString(path);
 
             // Init workspace
-            Workspace = (EditorWorkspace)(Activator.CreateInstance(workspaceChecks.Where(x => x.Key.IsAssignableTo(typeof(EditorWorkspace)))
+            Workspace = (EditorWorkspace)(Activator.CreateInstance(WorkspaceTypeValidators.Where(x => x.Key.IsAssignableTo(typeof(EditorWorkspace)))
                 .First(x => x.Value(path)).Key,path) ?? new EditorWorkspace(path));
+
+            await Workspace.Initialize();
 
             // Notify that the project or solution is opened
             OnOpenProjectOrSolution?.Invoke(path);
-
-            // Use ProjectLoader to load the project or solution
-            if (_projectLoader != null)
-            {
-                if (path.EndsWith(".sln"))
-                {
-                    await _projectLoader.LoadSolutionAsync(path);
-                }
-                else if (path.EndsWith(".csproj"))
-                {
-                    await _projectLoader.LoadProjectAsync(path);
-                }
-                else
-                {
-                    await _projectLoader.LoadFolderAsync(path);
-                }
-            }
 
             if (Config.RecentOpenedFiles.FirstOrDefault(x => x.Path == path) is RecentOpenedFile recentFile)
             {
@@ -118,6 +95,9 @@ namespace CodeForgeIDE.Core
             }
 
             SaveConfiguration();
+
+            // Notify that the workspace is loaded
+            OnWorkspaceLoaded?.Invoke();
         }
 
         public void OpenDocument(string path)
@@ -130,9 +110,35 @@ namespace CodeForgeIDE.Core
             OnSelectDocument?.Invoke(path);
         }
 
-        public void RegisterWorkspaceType<T>(Func<string, bool> check) where T : EditorWorkspace
+        public void RegisterWorkspaceValidator<T>(Func<string, bool> check) where T : EditorWorkspace
         {
-            workspaceChecks.Add(typeof(T), check);
+            WorkspaceTypeValidators.Add(typeof(T), check);
+        }
+
+        public void RegisterDocumentColorizingTransformer<T>(string extension) where T : SyntaxHighlightTransformer
+        {
+            if (DocumentColorizingTransformers.ContainsKey(extension))
+            {
+                DocumentColorizingTransformers[extension].Add(typeof(T));
+            }
+            else
+            {
+                DocumentColorizingTransformers.Add(extension, new List<Type>() { typeof(T) });
+            }
+        }
+
+        public List<SyntaxHighlightTransformer> GetDocumentColorizingTransformers(string path)
+        {
+            string extension = Path.GetExtension(path);
+
+            if (DocumentColorizingTransformers.ContainsKey(extension))
+            {
+                return DocumentColorizingTransformers[extension].Select(x => (SyntaxHighlightTransformer)Activator.CreateInstance(x,path)!).ToList();
+            }
+            else
+            {
+                return new List<SyntaxHighlightTransformer>();
+            }
         }
 
         public T GetWorkspaceAs<T>() where T : EditorWorkspace
