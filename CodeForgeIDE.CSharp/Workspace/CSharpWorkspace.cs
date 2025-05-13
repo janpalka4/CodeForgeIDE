@@ -1,6 +1,8 @@
 ﻿using CodeForgeIDE.Core.Workspace;
+using CodeForgeIDE.CSharp.Lang;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.MSBuild;
+using Microsoft.CSharp;
 
 namespace CodeForgeIDE.CSharp.Workspace
 {
@@ -19,6 +21,13 @@ namespace CodeForgeIDE.CSharp.Workspace
         {
             MsBuildWorkspace = await LoadWorkspace(FullPath);
             Solution = MsBuildWorkspace.CurrentSolution;
+
+            await CSharpCodeCompletion.Instance.InitializeSolutionAnalysisAsync(Solution);
+            CSharpCodeCompletion.Instance.AnalysisCompleted += (sender, args) =>
+            {
+                // Handle analysis completed event
+                
+            };
         }
 
         public Document? GetDocument(string path)

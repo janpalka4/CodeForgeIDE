@@ -17,6 +17,7 @@ namespace CodeForgeIDE.Core.Lang
         public CompletionData(string text, IImage image)
         {
             Text = text;
+            Image = image;
         }
 
 

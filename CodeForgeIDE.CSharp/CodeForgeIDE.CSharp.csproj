@@ -11,20 +11,32 @@
     <None Remove="Assets\csharp-sln.svg" />
     <None Remove="Assets\Icons\csharp.svg" />
     <None Remove="Assets\Icons\file.svg" />
+    <None Remove="Assets\Icons\symbol-class.png" />
     <None Remove="Assets\Icons\symbol-class.svg" />
+    <None Remove="Assets\Icons\symbol-constant.png" />
     <None Remove="Assets\Icons\symbol-constant.svg" />
+    <None Remove="Assets\Icons\symbol-enum-member.png" />
     <None Remove="Assets\Icons\symbol-enum-member.svg" />
+    <None Remove="Assets\Icons\symbol-enum.png" />
     <None Remove="Assets\Icons\symbol-enum.svg" />
+    <None Remove="Assets\Icons\symbol-event.png" />
     <None Remove="Assets\Icons\symbol-event.svg" />
+    <None Remove="Assets\Icons\symbol-field.png" />
     <None Remove="Assets\Icons\symbol-field.svg" />
+    <None Remove="Assets\Icons\symbol-interface.png" />
     <None Remove="Assets\Icons\symbol-interface.svg" />
+    <None Remove="Assets\Icons\symbol-keyword.png" />
     <None Remove="Assets\Icons\symbol-keyword.svg" />
+    <None Remove="Assets\Icons\symbol-method.png" />
     <None Remove="Assets\Icons\symbol-method.svg" />
     <None Remove="Assets\Icons\symbol-misc.svg" />
+    <None Remove="Assets\Icons\symbol-namespace.png" />
     <None Remove="Assets\Icons\symbol-namespace.svg" />
     <None Remove="Assets\Icons\symbol-parameter.svg" />
+    <None Remove="Assets\Icons\symbol-property.png" />
     <None Remove="Assets\Icons\symbol-property.svg" />
     <None Remove="Assets\Icons\symbol-structure.svg" />
+    <None Remove="Assets\Icons\symbol-variable.png" />
     <None Remove="Assets\Icons\symbol-variable.svg" />
   </ItemGroup>
 
@@ -33,24 +45,37 @@
     <AvaloniaResource Include="Assets\Icons\csharp-sln.svg" />
     <AvaloniaResource Include="Assets\Icons\csharp.svg" />
     <AvaloniaResource Include="Assets\Icons\file.svg" />
+    <AvaloniaResource Include="Assets\Icons\symbol-class.png" />
     <AvaloniaResource Include="Assets\Icons\symbol-class.svg" />
+    <AvaloniaResource Include="Assets\Icons\symbol-constant.png" />
     <AvaloniaResource Include="Assets\Icons\symbol-constant.svg" />
+    <AvaloniaResource Include="Assets\Icons\symbol-enum-member.png" />
     <AvaloniaResource Include="Assets\Icons\symbol-enum-member.svg" />
+    <AvaloniaResource Include="Assets\Icons\symbol-enum.png" />
     <AvaloniaResource Include="Assets\Icons\symbol-enum.svg" />
+    <AvaloniaResource Include="Assets\Icons\symbol-event.png" />
     <AvaloniaResource Include="Assets\Icons\symbol-event.svg" />
+    <AvaloniaResource Include="Assets\Icons\symbol-field.png" />
     <AvaloniaResource Include="Assets\Icons\symbol-field.svg" />
+    <AvaloniaResource Include="Assets\Icons\symbol-interface.png" />
     <AvaloniaResource Include="Assets\Icons\symbol-interface.svg" />
+    <AvaloniaResource Include="Assets\Icons\symbol-keyword.png" />
     <AvaloniaResource Include="Assets\Icons\symbol-keyword.svg" />
+    <AvaloniaResource Include="Assets\Icons\symbol-method.png" />
     <AvaloniaResource Include="Assets\Icons\symbol-method.svg" />
     <AvaloniaResource Include="Assets\Icons\symbol-misc.svg" />
+    <AvaloniaResource Include="Assets\Icons\symbol-namespace.png" />
     <AvaloniaResource Include="Assets\Icons\symbol-namespace.svg" />
     <AvaloniaResource Include="Assets\Icons\symbol-parameter.svg" />
+    <AvaloniaResource Include="Assets\Icons\symbol-property.png" />
     <AvaloniaResource Include="Assets\Icons\symbol-property.svg" />
     <AvaloniaResource Include="Assets\Icons\symbol-structure.svg" />
+    <AvaloniaResource Include="Assets\Icons\symbol-variable.png" />
     <AvaloniaResource Include="Assets\Icons\symbol-variable.svg" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FuzzySharp" Version="2.0.2" />
     <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.11.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
