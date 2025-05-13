@@ -938,10 +938,8 @@ namespace CodeForgeIDE.CSharp.Lang.CodeCompletion
         /// Analyzuje lokální proměnné a parametry pro code completion na určité pozici
         /// </summary>
         /// <param name="filePath">Cesta k souboru</param>
-        /// <param name="line">Řádek (0-based)</param>
-        /// <param name="column">Sloupec (0-based)</param>
         /// <returns>Seznam nalezených lokálních symbolů</returns>
-        public async Task<IEnumerable<CompletionSymbol>> AnalyzeLocalScope(string filePath, int line, int column)
+        public async Task<IEnumerable<CompletionSymbol>> AnalyzeLocalScope(string filePath, int caretPosition)
         {
             if (string.IsNullOrEmpty(filePath) || !File.Exists(filePath))
                 return Enumerable.Empty<CompletionSymbol>();
@@ -973,7 +971,7 @@ namespace CodeForgeIDE.CSharp.Lang.CodeCompletion
                     }
 
                     // Vytvoření pozice
-                    var position = syntaxTree.GetRoot().FindToken(new Microsoft.CodeAnalysis.Text.TextSpan(line, column).Start).SpanStart;
+                    var position = syntaxTree.GetRoot().FindToken(caretPosition).SpanStart;
 
                     // Seznam všech lokálních proměnných a parametrů
                     var localSymbols = new List<CompletionSymbol>();

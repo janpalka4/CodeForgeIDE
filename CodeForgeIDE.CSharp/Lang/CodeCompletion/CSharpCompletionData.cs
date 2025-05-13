@@ -13,7 +13,7 @@ namespace CodeForgeIDE.CSharp.Lang.CodeCompletion
 
         public CSharpCompletionData(CompletionSymbol symbol) : base(symbol.Name, symbol.GetIcon().ToImage())
         {
-
+            Description = symbol.Description;
         }
     }
 }

@@ -9,7 +9,7 @@ namespace CodeForgeIDE.Core.Lang
     {
         public string Text { get; }
         public object Content => Text;
-        public object Description => $"Insert '{Text}'";
+        public object Description { get; set; }
         public double Priority => 0;
 
         public IImage Image { get; private set; }

@@ -114,9 +114,9 @@ namespace CodeForgeIDE.CSharp.Lang
         /// <param name="column">Sloupec (0-based)</param>
         /// <param name="query">Částečný text pro filtrování výsledků</param>
         /// <returns>Seznam symbolů pro code completion</returns>
-        public async Task<IEnumerable<CompletionSymbol>> GetCompletionItemsAsync(string filePath, int line, int column, string query = null)
+        public async Task<IEnumerable<CompletionSymbol>> GetCompletionItemsAsync(string filePath, int caretPosition, string query = null)
         {
-            return await _completionManager.GetCompletionItemsAsync(filePath, line, column, query);
+            return await _completionManager.GetCompletionItemsAsync(filePath, caretPosition, query);
         }
 
         /// <summary>

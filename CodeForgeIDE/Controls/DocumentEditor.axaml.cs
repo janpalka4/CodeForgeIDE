@@ -85,11 +85,9 @@ public partial class DocumentEditor : UserControl
         var data = _completionWindow.CompletionList.CompletionData;
 
         var caretOffset = textEditor.CaretOffset;
-        var line = textEditor.Document.GetLineByOffset(caretOffset);
-        var column = caretOffset - line.Offset;
 
         // Add suggestions  
-        var completionItems = await CSharpCodeCompletion.Instance.GetCompletionItemsAsync(FullPath, line.LineNumber, column);
+        var completionItems = await CSharpCodeCompletion.Instance.GetCompletionItemsAsync(FullPath, caretOffset);
         data.AddRange(completionItems.Select(x => new CSharpCompletionData(x)));
 
         // Show the window  

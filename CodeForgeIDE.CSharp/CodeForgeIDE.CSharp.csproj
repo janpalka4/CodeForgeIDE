@@ -32,6 +32,7 @@
     <None Remove="Assets\Icons\symbol-misc.svg" />
     <None Remove="Assets\Icons\symbol-namespace.png" />
     <None Remove="Assets\Icons\symbol-namespace.svg" />
+    <None Remove="Assets\Icons\symbol-parameter.png" />
     <None Remove="Assets\Icons\symbol-parameter.svg" />
     <None Remove="Assets\Icons\symbol-property.png" />
     <None Remove="Assets\Icons\symbol-property.svg" />
@@ -66,6 +67,7 @@
     <AvaloniaResource Include="Assets\Icons\symbol-misc.svg" />
     <AvaloniaResource Include="Assets\Icons\symbol-namespace.png" />
     <AvaloniaResource Include="Assets\Icons\symbol-namespace.svg" />
+    <AvaloniaResource Include="Assets\Icons\symbol-parameter.png" />
     <AvaloniaResource Include="Assets\Icons\symbol-parameter.svg" />
     <AvaloniaResource Include="Assets\Icons\symbol-property.png" />
     <AvaloniaResource Include="Assets\Icons\symbol-property.svg" />
