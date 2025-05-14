@@ -11,7 +11,7 @@ using System.Linq;
 
 namespace CodeForgeIDE;
 
-public partial class GatewayWindow : Window
+public partial class GatewayWindow : DraggableWindow
 {
     public GatewayWindow()
     {
@@ -31,6 +31,10 @@ public partial class GatewayWindow : Window
             };
             recentFiles.Children.Add(item);
         }
+
+        this.EnsureInitialized();
+        var p = this.FindControl<Panel>("dragPanel");
+        this.SetupDragControl(p);
     }
 
     private void Button_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)

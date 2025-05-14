@@ -5,11 +5,13 @@
        mc:Ignorable="d" d:DesignWidth="770" d:DesignHeight="513"
        x:Class="CodeForgeIDE.MainWindow"
        Title="CodeForgeIDE"
-       ExtendClientAreaToDecorationsHint="True"
+       ExtendClientAreaToDecorationsHint="False"
        ExtendClientAreaChromeHints="NoChrome"
        ExtendClientAreaTitleBarHeightHint="-1"
        SizeToContent="WidthAndHeight"
        CanResize="False"
+	   TransparencyLevelHint="None"
+	   SystemDecorations="None"	
        WindowStartupLocation="CenterScreen">
    <Grid>
        <Grid.RowDefinitions>

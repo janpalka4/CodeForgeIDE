@@ -6,11 +6,13 @@
        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
        x:Class="CodeForgeIDE.GatewayWindow"
        Title="GatewayWindow"
-       ExtendClientAreaToDecorationsHint="True"
+       ExtendClientAreaToDecorationsHint="False"
        ExtendClientAreaChromeHints="NoChrome"
        ExtendClientAreaTitleBarHeightHint="-1"
        SizeToContent="WidthAndHeight"
        CanResize="False"
+	   TransparencyLevelHint="None"
+	   SystemDecorations="None"	
        WindowStartupLocation="CenterScreen"
        Background="{DynamicResource SemiGrey0}">
 
@@ -23,11 +25,15 @@
 		<StackPanel VerticalAlignment="Stretch" Height="450" Background="{DynamicResource ThemeBackgroundBrush}">
 			<Grid>
 				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="auto"/>
 					<ColumnDefinition/>
 					<ColumnDefinition Width="50"/>
 				</Grid.ColumnDefinitions>
 				<Label Content="Code Forge" Margin="18" FontSize="28" Foreground="White" FontWeight="Bold"/>
-				<Button x:Name="closeButton" Theme="{DynamicResource BorderlessButton}" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="8" Grid.Column="1" Click="Button_Click">
+				<Panel Name="dragPanel" Grid.Column="1" Background="{DynamicResource SemiGrey0}">
+					
+				</Panel>
+				<Button x:Name="closeButton" Theme="{DynamicResource BorderlessButton}" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="8" Grid.Column="2" Click="Button_Click">
 					<Svg Path="/Assets/Icons/chrome-close.svg" Width="16"/>
 				</Button>
 			</Grid>

@@ -85,9 +85,22 @@ public partial class DocumentEditor : UserControl
         var data = _completionWindow.CompletionList.CompletionData;
 
         var caretOffset = textEditor.CaretOffset;
+        string query = "";
+        for (int i = 0; i < 50; i++) {
+            int index = caretOffset - i - 1;
+            if (index < 0)
+                break;
+
+            if (Char.IsWhiteSpace(textEditor.Text[index]) || (i > 0 && textEditor.Text[index] == '.'))
+                break;
+
+            query += textEditor.Text[index];
+        }
+
+        query = new string(query.Reverse().ToArray());
 
         // Add suggestions  
-        var completionItems = await CSharpCodeCompletion.Instance.GetCompletionItemsAsync(FullPath, caretOffset);
+        var completionItems = await CSharpCodeCompletion.Instance.GetCompletionItemsAsync(FullPath, caretOffset,query);
         data.AddRange(completionItems.Select(x => new CSharpCompletionData(x)));
 
         // Show the window  
